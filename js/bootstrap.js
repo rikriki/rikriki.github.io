@@ -797,7 +797,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap requires jQuery'
     this.$element  = $(element)
     this.$backdrop =
     this.isShown   = null
-
+    console.log(this.$element)
     if (this.options.remote) {
       this.$element
         .find('.modal-content')
@@ -972,7 +972,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap requires jQuery'
   // =======================
 
   var old = $.fn.modal
-
+  var pID
   $.fn.modal = function (option, _relatedTarget) {
     return this.each(function () {
       var $this   = $(this)
@@ -982,6 +982,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap requires jQuery'
       if (!data) $this.data('bs.modal', (data = new Modal(this, options)))
       if (typeof option == 'string') data[option](_relatedTarget)
       else if (options.show) data.show(_relatedTarget)
+       console.log(pID+ "riki")
     })
   }
 
@@ -1003,11 +1004,11 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap requires jQuery'
   $(document).on('click.bs.modal.data-api', '[data-toggle="modal"]', function (e) {
     var $this   = $(this)
     var href    = $this.attr('href')
-    var projectID    = $this.attr('alt')
+    pID   = $this.attr('alt')
 
     var $target = $($this.attr('data-target') || (href && href.replace(/.*(?=#[^\s]+$)/, ''))) //strip for ie7
     var option  = $target.data('bs.modal') ? 'toggle' : $.extend({ remote: !/#/.test(href) && href }, $target.data(), $this.data())
-    console.dir($target)
+    
     if ($this.is('a')) e.preventDefault()
 
     $target
@@ -1015,6 +1016,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap requires jQuery'
       .one('hide', function () {
         $this.is(':visible') && $this.focus()
       })
+      
   })
 
   $(document)

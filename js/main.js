@@ -27,7 +27,7 @@ var userID  = 'rikirosales';
             var data = JSON.stringify(user);
             sessionStorage.setItem('behanceProjects', data);
             setProjectTemplate();
-            console.log(result)
+            //console.log(result)
         });
         function setProjectTemplate() {
             var userData    = JSON.parse(sessionStorage.getItem('behanceProjects')),
@@ -35,7 +35,7 @@ var userID  = 'rikirosales';
             template    = Handlebars.compile(getTemplate),
             result      = template(userData);
             $('#projects').html(result);
-            console.log(result)
+            //console.log(result)
         };
 
 })();
