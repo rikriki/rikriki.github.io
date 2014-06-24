@@ -1,15 +1,15 @@
 
 var apiKey  = 'NGCVFuJ8w4IWMyLeaGGyg2X01orRKdq1';
-var userID  = 'ionman';
+var userID  = 'rikirosales';
  (function() {
  var behanceUserAPI = 'http://www.behance.net/v2/users/'+ userID +'?callback=?&api_key='+ apiKey;
+ var behanceProjectsAPI = 'http://www.behance.net/v2/users/'+ userID +'/projects?callback=?&api_key='+ apiKey;
     
         $.getJSON(behanceUserAPI, function(user) {
             
             var data = JSON.stringify(user);
             sessionStorage.setItem('behanceUser', data);
             setUserTemplate();
-            console.log(data)
         });
 
         function setUserTemplate() {
@@ -18,8 +18,25 @@ var userID  = 'ionman';
 	        template    = Handlebars.compile(getTemplate),
 	        result      = template(userData);
 	        $('div.header').html(result);
-	        console.log(result)
+	        
     	};
+
+
+         $.getJSON(behanceProjectsAPI, function(user) {
+            
+            var data = JSON.stringify(user);
+            sessionStorage.setItem('behanceProjects', data);
+            setProjectTemplate();
+            console.log(result)
+        });
+        function setProjectTemplate() {
+            var userData    = JSON.parse(sessionStorage.getItem('behanceProjects')),
+            getTemplate = $('#project-template').html(),
+            template    = Handlebars.compile(getTemplate),
+            result      = template(userData);
+            $('#projects').html(result);
+            console.log(result)
+        };
 
 })();
 
