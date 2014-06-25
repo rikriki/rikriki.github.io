@@ -11,15 +11,22 @@ var userID  = 'rikirosales';
             sessionStorage.setItem('behanceUser', data);
             setUserTemplate();
             setAboutTemplate();
+
         });
 
         function setUserTemplate() {
+            Handlebars.registerHelper('noop', function() {
+            return "rikis";
+            });        
+
 	        var userData    = JSON.parse(sessionStorage.getItem('behanceUser')),
 	        getTemplate = $('#profile-template').html(),
 	        template    = Handlebars.compile(getTemplate),
 	        result      = template(userData);
+
 	        $('div.header').html(result);
             cbpAnimatedHeader();
+
         };
         function setAboutTemplate() {
             var userData    = JSON.parse(sessionStorage.getItem('behanceUser')),
@@ -45,9 +52,11 @@ var userID  = 'rikirosales';
             template    = Handlebars.compile(getTemplate),
             result      = template(userData);
             $('#projects').html(result);
-            //console.log(result)
+            
+             
+          
         };
-
+   
 })();
 
 
@@ -66,6 +75,8 @@ function projectIDInit(projectID){
             template    = Handlebars.compile(getTemplate),
             result      = template(userData);
             $('div.modal-content').html(result);
+            //alert(userData)
+            
             
         };
 }    

@@ -42,7 +42,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#page-top">{{user.display_name}}</a>
+                <a class="navbar-brand" href="#page-top">{{ user.display_name}}</a>{{#noop}}{{/noop}}
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -111,24 +111,28 @@
                 </div>
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-8 col-lg-offset-2">
+                        <div class="col-lg-10 col-lg-offset-1">
                             <div class="modal-body">
                                 <h2>{{project.name}}</h2>
                                 <hr class="star-primary">
                                 <p>{{project.description}}</p>
                                 <ul class="list-inline item-details">
-                                    <li>fields: 
-                                    {{#each project.fields }}
-                                    <a href=""><strong>{{this }}</strong></a> 
-                                    {{/each}}
+                                    <li>Role: 
+                                   
+                                    <a href=""><strong>{{project.fields}}</strong></a> 
+                                    
                                     </li>
-                                    <li>Date: <strong><a href="http://startbootstrap.com">April 2014</a></strong>
+                                    //<li>Date: <strong><a href="" id="datePublished"></a></strong>
                                     </li>
-                                    <li>Service: <strong><a href="http://startbootstrap.com">Web Development</a></strong>
-                                    </li>
+                                    
                                 </ul>
                                 {{#each project.modules }}
-                                     <img src="{{this.src}}" class="img-responsive img-centered" alt=""><br/>
+                                     
+                                     {{#if this.sizes.max_1240}}
+                                         <img src="{{this.sizes.max_1240}}" class="img-responsive img-centered" alt=""><br/>
+                                      {{else}}
+                                          <img src="{{this.src}}" class="img-responsive img-centered" alt=""><br/>
+                                      {{/if}}
                                 {{/each}}
                                 
                                 
@@ -138,7 +142,7 @@
                     </div>
                 </div>
             
-      
+     
     </script>      
     <div class="header">
     </div>  
