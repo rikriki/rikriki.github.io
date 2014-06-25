@@ -115,10 +115,6 @@
                             <div class="modal-body">
                                 <h2>{{project.name}}</h2>
                                 <hr class="star-primary">
-                                {{#each project.modules }}
-                            <img src="{{this.src}}" class="img-responsive img-centered" alt=""><br/>
-                                {{/each}}
-                                
                                 <p>{{project.description}}</p>
                                 <ul class="list-inline item-details">
                                     <li>Client: <strong><a href="http://startbootstrap.com">Start Bootstrap</a></strong>
@@ -128,6 +124,11 @@
                                     <li>Service: <strong><a href="http://startbootstrap.com">Web Development</a></strong>
                                     </li>
                                 </ul>
+                                {{#each project.modules }}
+                                     <img src="{{this.src}}" class="img-responsive img-centered" alt=""><br/>
+                                {{/each}}
+                                
+                                
                                 <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                             </div>
                         </div>
