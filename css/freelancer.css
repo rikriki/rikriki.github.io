@@ -34,7 +34,7 @@ hr.star-light,
 hr.star-primary {
     margin: 25px auto 30px;
     padding: 0;
-    max-width: 250px;
+    max-width: 50px;
     border: 0;
     border-top: solid 5px;
     text-align: center;
@@ -43,7 +43,42 @@ hr.star-primary {
 hr.star-light:after,
 hr.star-primary:after {
     content: "\f005";
-    display: inline-block;
+    display: inline;
+    position: relative;
+    top: -1.1em;
+    padding: 0 .25em;
+    font-family: FontAwesome;
+    font-size: 2em;
+}
+
+hr.star-light {
+border-top: none;
+ display: inline-block;
+}
+
+hr.star-light:after,hr.star-light:before {
+    color: #fff;
+    display: inline;
+
+}
+
+
+
+
+
+
+hr.star-light2 {
+    margin: 25px auto 30px;
+    padding: 0;
+    max-width: 150px;
+    border: 0;
+    border-top: solid 5px;
+    text-align: center;
+}
+
+hr.star-light2:after {
+
+    display: inline;
     position: relative;
     top: -.8em;
     padding: 0 .25em;
@@ -51,14 +86,36 @@ hr.star-primary:after {
     font-size: 2em;
 }
 
-hr.star-light {
+hr.star-light2 {
     border-color: #fff;
+    display: inline-block;
+    height: 10px;
+    width: 35px;
 }
 
-hr.star-light:after {
+hr.star-light2:after {
     color: #fff;
-    background-color: #18bc9c;
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 hr.star-primary {
     border-color: #2c3e50;
@@ -74,9 +131,11 @@ hr.star-primary:after {
 }
 
 header {
+    background: url("../img/work.jpg") repeat scroll center center rgba(255, 255, 255, .5);
     text-align: center;
     color: #fff;
-    background: #18bc9c;
+    
+
 }
 
 header .container {
@@ -439,4 +498,5 @@ footer .footer-below {
 
 #profileImage{
     border-radius: 80px;
+    border: 10px solid rgba(255, 255, 255, 0.5);
 }
