@@ -19,6 +19,7 @@ var userID  = 'rikirosales';
 	        template    = Handlebars.compile(getTemplate),
 	        result      = template(userData);
 	        $('div.header').html(result);
+            cbpAnimatedHeader();
         };
         function setAboutTemplate() {
             var userData    = JSON.parse(sessionStorage.getItem('behanceUser')),
