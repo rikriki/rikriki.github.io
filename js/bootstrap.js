@@ -978,12 +978,11 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap requires jQuery'
       var $this   = $(this)
       var data    = $this.data('bs.modal')
       var options = $.extend({}, Modal.DEFAULTS, $this.data(), typeof option == 'object' && option)
-
+      
       if (!data) $this.data('bs.modal', (data = new Modal(this, options)))
       if (typeof option == 'string') data[option](_relatedTarget)
       else if (options.show) data.show(_relatedTarget)
-       console.log(pID+ "riki")
-    })
+     })
   }
 
   $.fn.modal.Constructor = Modal
@@ -1005,7 +1004,8 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap requires jQuery'
     var $this   = $(this)
     var href    = $this.attr('href')
     pID   = $this.attr('alt')
-
+    projectIDInit(pID);
+     $('div.modal-content').html("");
     var $target = $($this.attr('data-target') || (href && href.replace(/.*(?=#[^\s]+$)/, ''))) //strip for ie7
     var option  = $target.data('bs.modal') ? 'toggle' : $.extend({ remote: !/#/.test(href) && href }, $target.data(), $this.data())
     
