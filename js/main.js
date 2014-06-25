@@ -10,6 +10,7 @@ var userID  = 'rikirosales';
             var data = JSON.stringify(user);
             sessionStorage.setItem('behanceUser', data);
             setUserTemplate();
+            setAboutTemplate();
         });
 
         function setUserTemplate() {
@@ -18,8 +19,16 @@ var userID  = 'rikirosales';
 	        template    = Handlebars.compile(getTemplate),
 	        result      = template(userData);
 	        $('div.header').html(result);
-	        
-    	};
+        };
+        function setAboutTemplate() {
+            var userData    = JSON.parse(sessionStorage.getItem('behanceUser')),
+            getTemplate = $('#about-template').html(),
+            template    = Handlebars.compile(getTemplate),
+            result      = template(userData);
+            $('div#aboutContent').html(result);
+        };
+
+
 
 
          $.getJSON(behanceProjectsAPI, function(user) {

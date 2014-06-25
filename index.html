@@ -74,13 +74,16 @@
                     <div class="intro-text">
                         <span class="name">{{user.display_name}}</span>
                         <hr class="star-light">
-                        <span class="skills">{{user.sections.About}}</span>
+                        <span class="skills">{{user.sections.Hi}}</span>
                     </div>
                 </div>
             </div>
         </div>
     </header>
     </script> 
+    <script id="about-template" type="text/x-handlebars-template">
+        <p>{{user.sections.About}}</p>
+    </script>
     <script id="project-template" type="text/x-handlebars-template">
         {{#each projects }}
         
@@ -158,15 +161,12 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-lg-offset-2">
-                    <p>Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>
-                </div>
-                <div class="col-lg-4">
-                    <p>Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
+               
+                <div class="col-lg-8 col-lg-offset-2 text-center" id="aboutContent">
                 </div>
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <a href="#" class="btn btn-lg btn-outline">
-                        <i class="fa fa-download"></i> Download Theme
+                        <i class="fa fa-download"></i> Download my CV
                     </a>
                 </div>
             </div>
@@ -220,27 +220,25 @@
                 <div class="row">
                     <div class="footer-col col-md-4">
                         <h3>Location</h3>
-                        <p>3481 Melrose Place
-                            <br>Beverly Hills, CA 90210</p>
+                        <p>International City, Dubai
+                            <br>United Arab Emirates, 58630</p>
                     </div>
                     <div class="footer-col col-md-4">
                         <h3>Around the Web</h3>
                         <ul class="list-inline">
-                            <li><a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
-                            </li>
                             <li><a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
                             </li>
                             <li><a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
                             </li>
                             <li><a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
                             </li>
-                            <li><a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-dribbble"></i></a>
+                            <li><a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
                             </li>
                         </ul>
                     </div>
                     <div class="footer-col col-md-4">
-                        <h3>About Freelance</h3>
-                        <p>Freelance is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
+                        <h3>Powered by Behance</h3>
+                        <p>This is my experiment page using Behance API and Bootstrap for the template.</p>
                     </div>
                 </div>
             </div>
