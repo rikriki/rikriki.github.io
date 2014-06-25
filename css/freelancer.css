@@ -39,6 +39,9 @@ hr.star-primary {
     border-top: solid 5px;
     text-align: center;
 }
+hr.star-primary:after {
+    top: -.8em!important;
+}
 
 hr.star-light:after,
 hr.star-primary:after {
@@ -50,7 +53,9 @@ hr.star-primary:after {
     font-family: FontAwesome;
     font-size: 2em;
 }
-
+hr.star-primary {
+max-width: 250px!important;
+}
 hr.star-light {
 border-top: none;
  display: inline-block;
@@ -90,7 +95,7 @@ hr.star-light2 {
     border-color: #fff;
     display: inline-block;
     height: 10px;
-    width: 35px;
+    width: 90px;
 }
 
 hr.star-light2:after {
