@@ -250,6 +250,11 @@ section.success {
     section.first {
         padding-top: 75px;
     }
+    section.success {
+    color: #fff;
+     background: url("../img/bg3.jpg") no-repeat scroll center center rgba(0, 0, 0, 0);
+     padding: 200px 0;
+    }
 }
 
 #portfolio .portfolio-item {
