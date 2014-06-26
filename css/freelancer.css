@@ -165,8 +165,13 @@ header .intro-text .skills {
     font-size: 1.25em;
     font-weight: 300;
 }
-
+.banner-social-buttons {
+    margin-top: 0;
+}
 @media(min-width:768px) {
+    ul.banner-social-buttons>li:last-child {
+        margin-bottom: 0;
+    }
     header .container {
         padding: 200px 0 100px;
     }
@@ -331,7 +336,18 @@ section.success {
     color: #18bc9c;
     background: #fff;
 }
-
+.green{
+    border: 1px solid #28c3ab;
+    color: #28c3ab;
+    background-color: transparent;
+}
+.green:hover,
+.green:focus {
+    border: 1px solid #28c3ab;
+    outline: 0;
+    color: #000;
+    background-color: #28c3ab;
+}
 .floating-label-form-group {
     position: relative;
     margin-bottom: 0;
