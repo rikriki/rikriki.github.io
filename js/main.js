@@ -26,6 +26,7 @@ var userID  = 'rikirosales';
 
 	        $('div.header').html(result);
             cbpAnimatedHeader();
+            $("#copyright").html(userData.user.display_name)
 
         };
         function setAboutTemplate() {
