@@ -1,7 +1,17 @@
 
 var apiKey  = 'NGCVFuJ8w4IWMyLeaGGyg2X01orRKdq1';
 var userID  = 'rikirosales';
- (function() {
+
+var submitBtn = document.getElementById("submitBtn");
+$('#username').html("");
+
+submitBtnClick();
+
+ function submitBtnClick() {
+    if( document.querySelector('#username').value){
+        userID = document.querySelector('#username').value
+    }
+    submitBtn.addEventListener("click",submitBtnClick);
     var behanceUserAPI = 'http://www.behance.net/v2/users/'+ userID +'?callback=?&api_key='+ apiKey;
     var behanceProjectsAPI = 'http://www.behance.net/v2/users/'+ userID +'/projects?callback=?&api_key='+ apiKey;
     projectIDInit(475570)
@@ -58,7 +68,7 @@ var userID  = 'rikirosales';
           
         };
    
-})();
+};
 
 
 function projectIDInit(projectID){
