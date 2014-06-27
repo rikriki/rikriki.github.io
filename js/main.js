@@ -8,10 +8,10 @@ $('#username').html("");
 submitBtnClick();
 
  function submitBtnClick() {
-    if( document.querySelector('#username').value){
-        userID = document.querySelector('#username').value
-    }
-    submitBtn.addEventListener("click",submitBtnClick);
+    //if( document.querySelector('#username').value){
+    //    userID = document.querySelector('#username').value
+    //}
+    //submitBtn.addEventListener("click",submitBtnClick);
     var behanceUserAPI = 'http://www.behance.net/v2/users/'+ userID +'?callback=?&api_key='+ apiKey;
     var behanceProjectsAPI = 'http://www.behance.net/v2/users/'+ userID +'/projects?callback=?&api_key='+ apiKey;
     projectIDInit(475570)
