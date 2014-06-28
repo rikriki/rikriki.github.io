@@ -103,7 +103,7 @@ hr.star-light2:after {
 
 }
 
-
+ul.logo-icons li{margin:0px 20px;}
 
 
 
@@ -168,6 +168,13 @@ header .intro-text .skills {
 .banner-social-buttons {
     margin-top: 0;
 }
+#loadMore img{display: none;
+margin-left: 10px;
+}
+
+
+
+
 @media(min-width:768px) {
     ul.banner-social-buttons>li:last-child {
         margin-bottom: 0;
@@ -248,6 +255,7 @@ section.success {
 }
 
 @media(max-width:767px) {
+    ul.logo-icons li{margin:20px 20px;display:block;}
     section {
         padding: 75px 0;
     }
