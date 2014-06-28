@@ -6,7 +6,7 @@ var loadMore = document.getElementById("loadMore");
 loadMore.addEventListener("click",loadMoreProject);
 
 init();
-
+loadMoreProject();
  function init() {
     //if( document.querySelector('#username').value){
     //    userID = document.querySelector('#username').value
@@ -84,6 +84,7 @@ function loadMoreProject(event){
         })
      .done(function() {
        $("#loadMore ").hide();
+
      });
 
     function setProjectTemplate() {
@@ -92,6 +93,7 @@ function loadMoreProject(event){
         template    = Handlebars.compile(getTemplate),
         result      = template(userData);
         $('#projects').html(result);
+        //$(".img-responsive").addClass("imgAnimation")
     };
     event.preventDefault();
 }    

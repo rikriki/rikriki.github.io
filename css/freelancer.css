@@ -171,6 +171,10 @@ header .intro-text .skills {
 #loadMore img{display: none;
 margin-left: 10px;
 }
+
+
+
+
 @media(min-width:768px) {
     ul.banner-social-buttons>li:last-child {
         margin-bottom: 0;
