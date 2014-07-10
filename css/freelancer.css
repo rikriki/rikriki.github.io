@@ -165,8 +165,16 @@ header .intro-text .skills {
     font-size: 1.25em;
     font-weight: 300;
 }
+.banner-social-buttons {
+    margin-top: 0;
+}
 
 @media(min-width:768px) {
+   
+
+    ul.banner-social-buttons>li:last-child {
+        margin-bottom: 0;
+    }
     header .container {
         padding: 200px 0 100px;
     }
