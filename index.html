@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>riki rosales</title>
+    <title>riki rosales IO</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -29,7 +29,7 @@
 <body id="page-top" class="index">
 
     <!-- Navigation -->
-    
+
     <script id="profile-template" type="text/x-handlebars-template">
 
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -42,7 +42,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#page-top">{{user.display_name}}</a>
+                <a class="navbar-brand" href="#page-top">{{ user.display_name}}</a>{{#noop}}{{/noop}}
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -94,7 +94,7 @@
                             <i class="fa fa-search-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img src="{{this.covers.[202]}}" class="img-responsive" width="400" heigth="313" alt="" />
+                    <img src="{{this.covers.[404]}}" class="img-responsive" width="400" heigth="313" alt="" />
                 </a>
             </div>
        {{/each}}
@@ -111,21 +111,28 @@
                 </div>
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-8 col-lg-offset-2">
+                        <div class="col-lg-10 col-lg-offset-1">
                             <div class="modal-body">
                                 <h2>{{project.name}}</h2>
                                 <hr class="star-primary">
                                 <p>{{project.description}}</p>
                                 <ul class="list-inline item-details">
-                                    <li>Client: <strong><a href="http://startbootstrap.com">Start Bootstrap</a></strong>
+                                    <li>Role: 
+                                   
+                                    <a href=""><strong>{{project.fields}}</strong></a> 
+                                    
                                     </li>
-                                    <li>Date: <strong><a href="http://startbootstrap.com">April 2014</a></strong>
+                                    //<li>Date: <strong><a href="" id="datePublished"></a></strong>
                                     </li>
-                                    <li>Service: <strong><a href="http://startbootstrap.com">Web Development</a></strong>
-                                    </li>
+                                    
                                 </ul>
                                 {{#each project.modules }}
-                                     <img src="{{this.src}}" class="img-responsive img-centered" alt=""><br/>
+                                     
+                                     {{#if this.sizes.max_1240}}
+                                         <img src="{{this.sizes.max_1240}}" class="img-responsive img-centered" alt=""><br/>
+                                      {{else}}
+                                          <img src="{{this.src}}" class="img-responsive img-centered" alt=""><br/>
+                                      {{/if}}
                                 {{/each}}
                                 
                                 
@@ -135,7 +142,7 @@
                     </div>
                 </div>
             
-      
+     
     </script>      
     <div class="header">
     </div>  
@@ -147,6 +154,7 @@
                     <hr class="star-primary">
                 </div>
             </div>
+            <a id="loadMore"><img src="img/ajax-loader.gif"/>Load more project</a>
             <div class="row" id="projects">
             
             </div>
@@ -166,7 +174,7 @@
                 <div class="col-lg-8 col-lg-offset-2 text-center" id="aboutContent">
                 </div>
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <a href="#" class="btn btn-lg btn-outline">
+                    <a href="FrederickARosales_CV.docx" class="btn btn-lg btn-outline">
                         <i class="fa fa-download"></i> Download my CV
                     </a>
                 </div>
@@ -174,7 +182,11 @@
         </div>
     </section>
 
+<<<<<<< HEAD
     <section id="contact" class="container content-section text-center">
+=======
+     <section id="contact" class="container content-section text-center">
+>>>>>>> 1c35ae048754dbcfe296a550b8a6e0b440a026a6
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -184,6 +196,7 @@
             </div>
             <div class="row" >
               <div class="col-lg-8 col-lg-offset-2">
+<<<<<<< HEAD
                      <p>Feel free to email us to provide some feedback on our templates, give us suggestions for new templates and themes, or to just say hello!</p>
                     <p>frederick.rosales@gmail.com</p>
                     <ul class="list-inline banner-social-buttons">
@@ -192,6 +205,16 @@
                         <li><a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
                         </li>
                         <li><a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+=======
+                     <p>Are you lookinf for a bad ass developer to join your team? or a designer maybe for your upcoming project? Feel free to contact me on one of the details below.</p>
+                    <p>frederick.rosales@gmail.com</p>
+                    <ul class="list-inline banner-social-buttons">
+                        <li><a href="https://twitter.com/rikriki" class="btn btn-outline green btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                        </li>
+                        <li><a href="https://github.com/rikriki" class="btn btn-outline green btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                        </li>
+                        <li><a href="http://ae.linkedin.com/pub/frederick-rosales/8/297/28a" class="btn btn-outline green btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+>>>>>>> 1c35ae048754dbcfe296a550b8a6e0b440a026a6
                         </li>
                     </ul>
               </div>
@@ -203,27 +226,20 @@
         <div class="footer-above">
             <div class="container">
                 <div class="row">
-                    <div class="footer-col col-md-4">
-                        <h3>Location</h3>
-                        <p>International City, Dubai
-                            <br>United Arab Emirates, 58630</p>
-                    </div>
-                    <div class="footer-col col-md-4">
-                        <h3>Around the Web</h3>
-                        <ul class="list-inline">
-                            <li><a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
-                            </li>
-                            <li><a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
-                            </li>
-                            <li><a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
-                            </li>
+                    <div class="footer-col col-md-12">
+                        <h3>This web app is powered by:</h3>
+                        <ul class="list-inline logo-icons">
+                            <li><img src="img/github.png" class="img-responsive img-centered" alt=""></li>
+                            <li><img src="img/behance.png" class="img-responsive img-centered" alt=""></li>
+                            <li><img src="img/bootstrap.png" class="img-responsive img-centered" alt=""></li>
                         </ul>
-                    </div>
-                    <div class="footer-col col-md-4">
-                        <h3>Powered by Behance</h3>
-                        <p>This is my experiment page using Behance API and Bootstrap for the template.</p>
+                        <div><hr class="star-light2"><hr class="star-light"><hr class="star-light2"></div>
+                        <p>This Application run using Behance API for contents, Github for hosting and Bootstrap for the template. I created this experiment to see how rapid it is to develop a portfolio nowadays using the modern style of web development. My current stack for developing applications are Node.JS AngularJs and ExpressJs. Want to know more about how i work? Feel free to contact me with my <a href="#contact">details</a> above 
+                        <!--<form role="form" class="form-inline col-md-12 text-center">
+                        <input type="text" id="username" placeholder="Your Behance username " class="form-control col-sm-8">
+                        <button onclick="submitBtnClick();" class="btn btn-default col-sm-2" id="submitBtn" type="submit">Submit</button>
+                         </form>-->
+                        </p>
                     </div>
                 </div>
             </div>
@@ -232,7 +248,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        Copyright &copy; 2014 - Your Name
+                        Copyright &copy; 2014 - <span id="copyright"></span>
                     </div>
                 </div>
             </div>
