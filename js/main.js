@@ -24,10 +24,12 @@ var docElem = window.document.documentElement,
 
          var triggerBttn = document.getElementById( 'trigger-overlay' ),
          container = document.querySelector('.perspective-container'),
-        overlay = document.querySelector( 'div.overlay1' ),
+         overlay = document.querySelector( 'div.overlay1' ),
+         headerContainer,header,
+        
         closeBttn = overlay.querySelector( 'button.overlay-close' );
-        console.log(closeBttn)
         support = { transitions : Modernizr.csstransitions };
+        
 //http://www.behance.net/v2/users/rikirosales?callback=?&api_key=NGCVFuJ8w4IWMyLeaGGyg2X01orRKdq1
 //http://www.behance.net/v2/projects/475570?callback=?&api_key=NGCVFuJ8w4IWMyLeaGGyg2X01orRKdq1
 //http://www.behance.net/v2/users/rikirosales/projects?callback=?&api_key=NGCVFuJ8w4IWMyLeaGGyg2X01orRKdq1
@@ -131,10 +133,10 @@ function addScrollMagic() {
     
 
     var tween = new TimelineMax({yoyo: true})
-    .add(TweenMax.to('h2.portfolioAnimate', .3, {opacity:1,marginTop: 0}), 0)
-    .add(TweenMax.to('.star-primary.portfolioAnimate', .3, {opacity:1, left:0}),0)
-    .add(TweenMax.to('#portfolioMessage', .3, {opacity:1,bottom:10}), "+=0.2")
-    .add(TweenMax.to('.portfolio-item', .5, {opacity:1,bottom:10}), "+=0.2");
+    .add(TweenMax.to('h2.portfolioAnimate', .2, {opacity:1,marginTop: 0}), 0)
+    .add(TweenMax.to('.star-primary.portfolioAnimate', .2, {opacity:1, left:0}),0)
+    .add(TweenMax.to('#portfolioMessage', .2, {opacity:1,bottom:10}), "+=0.2")
+    .add(TweenMax.to('.portfolio-item', .2, {opacity:1,bottom:10}), "+=0.2");
     
   
   /*   function getAnimation(){
@@ -275,7 +277,11 @@ function loadMoreProject(event){
         setTimeout( function(){
            // $("#loadMore ").hide();
             //$(".overlay").addClass("close");
-            $("img#profileImage").removeClass("riki"); 
+            //$("img#profileImage").removeClass("riki"); 
+            headerContainer = document.getElementById('headerContainer');
+            header = document.getElementById('page-header');
+            classie.add(headerContainer,"open");
+            classie.add(header,"open")
 
             addScrollMagic();    
             $("body").removeClass("pageLoading");
