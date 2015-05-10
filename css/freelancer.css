@@ -140,6 +140,7 @@
     height: 47px;
     position: absolute;
     transform: translate(-13px, -20px);
+    -webkit-transform: translate(-13px, -20px);
     width: 63px;
 }
 .nav-toggle{
@@ -158,10 +159,13 @@
     width: 167px;
     transition:all .5s;
     transform:translate(100%,0%);
+     -webkit-transition:all .5s;
+     -webkit-transform:translate(100%,0%);
     z-index: -1;
 }
 .nav-toggle.shrink .smallHeader {
     transform:translate(0%,0%);
+    -webkit-transform:translate(0%,0%);
 }
 .overlay-hugeinc {
     right: 29px;
@@ -657,7 +661,9 @@ section.success {
 }
 /*iPhone and smaller*/
 @media(max-width:767px) {
-   
+    .cover{
+        display: none!important;
+    }   
     .css {
         margin: 10px 2px!important;
         width: 50px!important;
