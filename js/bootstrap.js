@@ -823,7 +823,6 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap requires jQuery'
 
     this.$element.trigger(e)
 
-
     $('.perspective-container').addClass('portfolio-hide');
 
     if (this.isShown || e.isDefaultPrevented()) return
@@ -844,6 +843,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap requires jQuery'
       that.$element
         .show()
         .scrollTop(0)
+        .css('overflow','hidden')
 
       if (transition) {
         that.$element[0].offsetWidth // force reflow
@@ -856,6 +856,11 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap requires jQuery'
       },500)
       
 
+
+      setTimeout(function(){
+        that.$element
+        .css('overflow','auto')
+      },2000)  
       that.enforceFocus()
 
       var e = $.Event('shown.bs.modal', { relatedTarget: _relatedTarget })
@@ -871,7 +876,9 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap requires jQuery'
   }
 
   Modal.prototype.hide = function (e) {
-    $('.perspective-container').removeClass('portfolio-hide')
+    setTimeout(function(){
+      $('.perspective-container').removeClass('portfolio-hide')
+    },500)
     if (e) e.preventDefault()
 
     e = $.Event('hide.bs.modal')

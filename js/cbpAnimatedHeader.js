@@ -11,9 +11,10 @@
 var cbpAnimatedHeader = function() {
 
 	var docElem = document.documentElement,
-		header = document.querySelector( '.navbar-fixed-top' ),
+		header = document.querySelector( '.nav-toggle' ),
 		didScroll = false,
-		changeHeaderOn = 300;
+		changeHeaderOn = 400;
+		
 
 	function init() {
 		window.addEventListener( 'scroll', function( event ) {
@@ -27,10 +28,11 @@ var cbpAnimatedHeader = function() {
 	function scrollPage() {
 		var sy = scrollY();
 		if ( sy >= changeHeaderOn ) {
-			classie.add( header, 'navbar-shrink' );
+			classie.add( header, 'shrink' );
+			
 		}
 		else {
-			classie.remove( header, 'navbar-shrink' );
+			classie.remove( header, 'shrink' );
 		}
 		didScroll = false;
 	}
@@ -42,3 +44,5 @@ var cbpAnimatedHeader = function() {
 	init();
 
 };
+
+cbpAnimatedHeader()
