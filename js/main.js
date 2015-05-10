@@ -24,36 +24,11 @@ var docElem = window.document.documentElement,
 
          var triggerBttn = document.getElementById( 'trigger-overlay' ),
          container = document.querySelector('.perspective-container'),
-        overlay = document.querySelector( 'div.overlay1' ),
-        closeBttn = overlay.querySelector( 'button.overlay-close' );
-        console.log(closeBttn)
-        support = { transitions : Modernizr.csstransitions };
-//http://www.behance.net/v2/users/rikirosales?callback=?&api_key=NGCVFuJ8w4IWMyLeaGGyg2X01orRKdq1
-//http://www.behance.net/v2/projects/475570?callback=?&api_key=NGCVFuJ8w4IWMyLeaGGyg2X01orRKdq1
-//http://www.behance.net/v2/users/rikirosales/projects?callback=?&api_key=NGCVFuJ8w4IWMyLeaGGyg2X01orRKdq1
+         overlay = document.querySelector( 'div.overlay1' ),
+         headerContainer,header,
+         closeBttn = overlay.querySelector( 'button.overlay-close' );
+         support = { transitions : Modernizr.csstransitions };
 
-// Cache the Dom
-    /*window.scrollTo(0, 0);
-    dom = { 
-
-        window   : $(window),
-
-        document : $(document),
-
-        html     : $('html'),
-
-        body     : $('body')
-
-    };
-    dom.window.load(function(){
-
-        //Intro();
-       
-        
-        //$('#page-preloader').fadeOut();
-
-
-    });*/
      init();
      loadMoreProject();
      startNAv();
@@ -81,12 +56,7 @@ var docElem = window.document.documentElement,
                  toggleOverlay()
             });
         });
-        
-
-
-
-   
-
+    }
     function toggleOverlay() {
         if( classie.has( overlay, 'open' ) ) {
             classie.remove( overlay, 'open' );
@@ -115,80 +85,10 @@ var docElem = window.document.documentElement,
     }
 
     triggerBttn.addEventListener( 'click', toggleOverlay );
-    closeBttn.addEventListener( 'click', toggleOverlay );
+    //closeBttn.addEventListener( 'click', toggleOverlay );
 
 
 
-
-    }
-
-
-
-function addScrollMagic() {
-    // Init Controller
-    var scrollMagicController = new ScrollMagic({globalSceneOptions: {duration: 0}});
-    // Create Animation for 0.5s
-    
-
-    var tween = new TimelineMax({yoyo: true})
-    .add(TweenMax.to('h2.portfolioAnimate', .3, {opacity:1,marginTop: 0}), 0)
-    .add(TweenMax.to('.star-primary.portfolioAnimate', .3, {opacity:1, left:0}),0)
-    .add(TweenMax.to('#portfolioMessage', .3, {opacity:1,bottom:10}), "+=0.2")
-    .add(TweenMax.to('.portfolio-item', .5, {opacity:1,bottom:10}), "+=0.2");
-    
-  
-  /*   function getAnimation(){
-       // TweenMax.to('h2.portfolioAnimate', .3, {opacity:1,marginTop: 0});
-          TweenLite.set('h2.portfolioAnimate', {x:-30, y:300})
-    }
-    var tween = new TimelineMax();
-    tween.add(getAnimation(),.5);*/
-    
-    
-   
-
-
-    // Portfolio
-    var scene = new ScrollScene({
-        triggerElement: '#portfolio',
-        offset: 100 /* offset the trigger 150px below #scene's top */
-    })
-    .setTween(tween)
-    .setClassToggle("#trigger-overlay", "portfolio")
-    .addTo(scrollMagicController);
-
-
-    //About
-    var tween2 = new TimelineMax({yoyo: true})
-    .add(TweenMax.to('h2.aboutAnimate', .2, {opacity:1,marginTop: 0}))
-    .add(TweenMax.to('.aboutBorder', .2, {opacity:1,marginTop: 0}))
-    .add(TweenMax.to('#aboutContent', .2, {opacity:1,marginTop: 0}))
-    ;
-
-
-
-    // Create the Scene and trigger when visible with ScrollMagic
-     scene = new ScrollScene({
-        triggerElement: '#about',
-
-        offset: 150 /* offset the trigger 150px below #scene's top */
-    })
-    .setTween(tween2)
-    .setClassToggle("#trigger-overlay", "about")
-    .addTo(scrollMagicController);
-
-     scene = new ScrollScene({
-        triggerElement: '#contact',
-
-        offset: 150 /* offset the trigger 150px below #scene's top */
-    })
-    .setClassToggle("#trigger-overlay", "contact")
-    .addTo(scrollMagicController);
-
-
-     //scene.addIndicators();
-
-}
 
 function toolsClick(e){
     TweenMax.to('h3.aboutAnimate', .8, {opacity:1,marginTop: 118});
@@ -201,7 +101,7 @@ function init() {
     //}
     //submitBtn.addEventListener("click",submitBtnClick);
     var behanceUserAPI = 'http://www.behance.net/v2/users/'+ userID +'?callback=?&api_key='+ apiKey;
-    
+    container= document.querySelector('.container')
     projectIDInit(1);
           $.getJSON("json/profile.json", function(user) {
         //$.getJSON(behanceUserAPI, function(user) {
@@ -273,14 +173,18 @@ function loadMoreProject(event){
         })
      .done(function() {
         setTimeout( function(){
-           // $("#loadMore ").hide();
-            //$(".overlay").addClass("close");
-            $("img#profileImage").removeClass("riki"); 
-
-            addScrollMagic();    
+            
             $("body").removeClass("pageLoading");
-             setTimeout( function(){$(".overlay").remove();},1000);
+             setTimeout( function(){$(".overlay").remove();},4000);
                //window.scrollTo(0,$(window.location.hash).offset().top);
+               container = document.getElementById('prism-effect');
+               output = document.getElementById('output');
+               initialise(); 
+               headerContainer = document.getElementById('headerContainer');
+               header = document.getElementById('page-header');
+               classie.add(headerContainer,"open");
+               classie.add(header,"open")  
+
         }, 2000 );
        
 
@@ -302,3 +206,362 @@ function loadMoreProject(event){
          });
     }
 }    
+
+
+
+       
+           var MESH = {
+             width: 3,
+             height: 3,
+             depth: 36,
+             segments: 20,
+             slices: 10,
+             xRange: 0.7,
+             yRange: 0.65,
+             zRange: 1.0,
+             ambient: '#590000',
+             diffuse: '#FF5A6E',
+             speed: 0.0003
+           };
+           var LIGHT = {
+             count: 0.1,
+             xyScalar: 1,
+             zOffset: 149,
+             ambient: '#FFFFFF',
+             diffuse: '#FFFFFF',
+             speed: 0.001,
+             gravity: 1200,
+             dampening: 0.05,
+             minLimit: 10,
+             maxLimit: null,
+             minDistance: 20,
+             maxDistance: 400,
+             autopilot: false,
+             draw: false,
+             bounds: FSS.Vector3.create(),
+             step: FSS.Vector3.create(
+               Math.randomInRange(0.2, 1.0),
+               Math.randomInRange(0.2, 1.0),
+               Math.randomInRange(0.2, 1.0)
+             )
+           };
+            var WEBGL = 'webgl';
+            var CANVAS = 'canvas';
+            var SVG = 'svg';
+            var RENDER = {
+              renderer: CANVAS
+            };
+
+        //------------------------------
+        // Export Properties
+        //------------------------------
+        var EXPORT = {
+          width: 2000,
+          height: 1000,
+          drawLights: false,
+          minLightX: 0.4,
+          maxLightX: 0.6,
+          minLightY: 0.2,
+          maxLightY: 0.4,
+          export: function() {
+            var l, x, y, light,
+                depth = MESH.depth,
+                zOffset = LIGHT.zOffset,
+                autopilot = LIGHT.autopilot,
+                scalar = this.width / renderer.width;
+
+            LIGHT.autopilot = true;
+            LIGHT.draw = this.drawLights;
+            LIGHT.zOffset *= scalar;
+            MESH.depth *= scalar;
+
+            resize(this.width, this.height);
+
+            for (l = scene.lights.length - 1; l >= 0; l--) {
+              light = scene.lights[l];
+              x = Math.randomInRange(this.width*this.minLightX, this.width*this.maxLightX);
+              y = Math.randomInRange(this.height*this.minLightY, this.height*this.maxLightY);
+              FSS.Vector3.set(light.position, x, this.height-y, this.lightZ);
+              FSS.Vector3.subtract(light.position, center);
+            }
+
+            update();
+            render();
+
+            switch(RENDER.renderer) {
+              case WEBGL:
+                window.open(webglRenderer.element.toDataURL(), '_blank');
+                break;
+              case CANVAS:
+                window.open(canvasRenderer.element.toDataURL(), '_blank');
+                break;
+              case SVG:
+                var data = encodeURIComponent(output.innerHTML);
+                var url = "data:image/svg+xml," + data;
+                window.open(url, '_blank');
+                break;
+            }
+
+            LIGHT.draw = true;
+            LIGHT.autopilot = autopilot;
+            LIGHT.zOffset = zOffset;
+            MESH.depth = depth;
+
+            resize(container.offsetWidth, container.offsetHeight);
+          }
+        };
+
+
+        //------------------------------
+        // Global Properties
+        //------------------------------
+        var now, start = Date.now();
+        var center = FSS.Vector3.create();
+        var attractor = FSS.Vector3.create();
+        
+        var renderer, scene, mesh, geometry, material;
+        var webglRenderer, canvasRenderer, svgRenderer;
+        var gui, autopilotController;
+        var container;
+        var output; 
+        //------------------------------
+        // Methods
+        //------------------------------
+        function initialise() {
+        console.log("riki")
+          createRenderer();
+          createScene();
+          createMesh();
+          createLights();
+          addEventListeners();
+          resize(container.offsetWidth, container.offsetHeight);
+          animate();
+        }
+
+        function createRenderer() {
+          webglRenderer = new FSS.WebGLRenderer();
+          canvasRenderer = new FSS.CanvasRenderer();
+          svgRenderer = new FSS.SVGRenderer();
+          setRenderer(RENDER.renderer);
+        }
+
+        function setRenderer(index) {
+          if (renderer) {
+            output.removeChild(renderer.element);
+          }
+          switch(index) {
+            case WEBGL:
+              renderer = webglRenderer;
+              break;
+            case CANVAS:
+              renderer = canvasRenderer;
+              break;
+            case SVG:
+              renderer = svgRenderer;
+              break;
+          }
+          renderer.setSize(container.offsetWidth, container.offsetHeight);
+          output.appendChild(renderer.element);
+        }
+
+        function createScene() {
+          scene = new FSS.Scene();
+        }
+
+        function createMesh() {
+          scene.remove(mesh);
+          renderer.clear();
+          geometry = new FSS.Plane(MESH.width * renderer.width, MESH.height * renderer.height, MESH.segments, MESH.slices);
+          material = new FSS.Material(MESH.ambient, MESH.diffuse);
+          mesh = new FSS.Mesh(geometry, material);
+          scene.add(mesh);
+
+          // Augment vertices for animation
+          var v, vertex;
+          for (v = geometry.vertices.length - 1; v >= 0; v--) {
+            vertex = geometry.vertices[v];
+            vertex.anchor = FSS.Vector3.clone(vertex.position);
+            vertex.step = FSS.Vector3.create(
+              Math.randomInRange(0.2, 1.0),
+              Math.randomInRange(0.2, 1.0),
+              Math.randomInRange(0.2, 1.0)
+            );
+            vertex.time = Math.randomInRange(0, Math.PIM2);
+          }
+        }
+
+        function createLights() {
+          var l, light;
+          for (l = scene.lights.length - 1; l >= 0; l--) {
+            light = scene.lights[l];
+            scene.remove(light);
+          }
+          renderer.clear();
+          for (l = 0; l < LIGHT.count; l++) {
+            light = new FSS.Light(LIGHT.ambient, LIGHT.diffuse);
+            light.ambientHex = light.ambient.format();
+            light.diffuseHex = light.diffuse.format();
+            scene.add(light);
+
+            // Augment light for animation
+            light.mass = Math.randomInRange(0.5, 1);
+            light.velocity = FSS.Vector3.create();
+            light.acceleration = FSS.Vector3.create();
+            light.force = FSS.Vector3.create();
+
+            // Ring SVG Circle
+            light.ring = document.createElementNS(FSS.SVGNS, 'circle');
+            light.ring.setAttributeNS(null, 'stroke', light.ambientHex);
+            light.ring.setAttributeNS(null, 'stroke-width', '0.5');
+            light.ring.setAttributeNS(null, 'fill', 'none');
+            light.ring.setAttributeNS(null, 'r', '10');
+
+            // Core SVG Circle
+            light.core = document.createElementNS(FSS.SVGNS, 'circle');
+            light.core.setAttributeNS(null, 'fill', light.diffuseHex);
+            light.core.setAttributeNS(null, 'r', '4');
+          }
+        }
+
+        function resize(width, height) {
+          renderer.setSize(width, height);
+          FSS.Vector3.set(center, renderer.halfWidth, renderer.halfHeight);
+          createMesh();
+        }
+
+        function animate() {
+          now = Date.now() - start;
+          update();
+          render();
+          requestAnimationFrame(animate);
+        }
+
+        function update() {
+          var ox, oy, oz, l, light, v, vertex, offset = MESH.depth/2;
+
+          // Update Bounds
+          FSS.Vector3.copy(LIGHT.bounds, center);
+          FSS.Vector3.multiplyScalar(LIGHT.bounds, LIGHT.xyScalar);
+
+          // Update Attractor
+          FSS.Vector3.setZ(attractor, LIGHT.zOffset);
+
+          // Overwrite the Attractor position
+          if (LIGHT.autopilot) {
+            ox = Math.sin(LIGHT.step[0] * now * LIGHT.speed);
+            oy = Math.cos(LIGHT.step[1] * now * LIGHT.speed);
+            FSS.Vector3.set(attractor,
+              LIGHT.bounds[0]*ox,
+              LIGHT.bounds[1]*oy,
+              LIGHT.zOffset);
+          }
+
+          // Animate Lights
+          for (l = scene.lights.length - 1; l >= 0; l--) {
+            light = scene.lights[l];
+
+            // Reset the z position of the light
+            FSS.Vector3.setZ(light.position, LIGHT.zOffset);
+
+            // Calculate the force Luke!
+            var D = Math.clamp(FSS.Vector3.distanceSquared(light.position, attractor), LIGHT.minDistance, LIGHT.maxDistance);
+            var F = LIGHT.gravity * light.mass / D;
+            FSS.Vector3.subtractVectors(light.force, attractor, light.position);
+            FSS.Vector3.normalise(light.force);
+            FSS.Vector3.multiplyScalar(light.force, F);
+
+            // Update the light position
+            FSS.Vector3.set(light.acceleration);
+            FSS.Vector3.add(light.acceleration, light.force);
+            FSS.Vector3.add(light.velocity, light.acceleration);
+            FSS.Vector3.multiplyScalar(light.velocity, LIGHT.dampening);
+            FSS.Vector3.limit(light.velocity, LIGHT.minLimit, LIGHT.maxLimit);
+            FSS.Vector3.add(light.position, light.velocity);
+          }
+
+          // Animate Vertices
+          for (v = geometry.vertices.length - 1; v >= 0; v--) {
+            vertex = geometry.vertices[v];
+            ox = Math.sin(vertex.time + vertex.step[0] * now * MESH.speed);
+            oy = Math.cos(vertex.time + vertex.step[1] * now * MESH.speed);
+            oz = Math.sin(vertex.time + vertex.step[2] * now * MESH.speed);
+            FSS.Vector3.set(vertex.position,
+              MESH.xRange*geometry.segmentWidth*ox,
+              MESH.yRange*geometry.sliceHeight*oy,
+              MESH.zRange*offset*oz - offset);
+            FSS.Vector3.add(vertex.position, vertex.anchor);
+          }
+
+          // Set the Geometry to dirty
+          geometry.dirty = true;
+        }
+
+        function render() {
+          renderer.render(scene);
+
+          // Draw Lights
+          if (LIGHT.draw) {
+            var l, lx, ly, light;
+            for (l = scene.lights.length - 1; l >= 0; l--) {
+              light = scene.lights[l];
+              lx = light.position[0];
+              ly = light.position[1];
+              switch(RENDER.renderer) {
+                case CANVAS:
+                  renderer.context.lineWidth = 0.5;
+                  renderer.context.beginPath();
+                  renderer.context.arc(lx, ly, 10, 0, Math.PIM2);
+                  renderer.context.strokeStyle = light.ambientHex;
+                  renderer.context.stroke();
+                  renderer.context.beginPath();
+                  renderer.context.arc(lx, ly, 4, 0, Math.PIM2);
+                  renderer.context.fillStyle = light.diffuseHex;
+                  renderer.context.fill();
+                  break;
+                case SVG:
+                  lx += renderer.halfWidth;
+                  ly = renderer.halfHeight - ly;
+                  light.core.setAttributeNS(null, 'fill', light.diffuseHex);
+                  light.core.setAttributeNS(null, 'cx', lx);
+                  light.core.setAttributeNS(null, 'cy', ly);
+                  renderer.element.appendChild(light.core);
+                  light.ring.setAttributeNS(null, 'stroke', light.ambientHex);
+                  light.ring.setAttributeNS(null, 'cx', lx);
+                  light.ring.setAttributeNS(null, 'cy', ly);
+                  renderer.element.appendChild(light.ring);
+                  break;
+              }
+            }
+          }
+        }
+
+        function addEventListeners() {
+          window.addEventListener('resize', onWindowResize);
+          container.addEventListener('click', onMouseClick);
+          container.addEventListener('mousemove', onMouseMove);
+        }
+
+        //------------------------------
+        // Callbacks
+        //------------------------------
+        function onMouseClick(event) {
+          FSS.Vector3.set(attractor, event.x, renderer.height - event.y);
+          FSS.Vector3.subtract(attractor, center);
+          LIGHT.autopilot = !LIGHT.autopilot;
+          //autopilotController.updateDisplay();
+        }
+
+        function onMouseMove(event) {
+          FSS.Vector3.set(attractor, event.x, renderer.height - event.y);
+          FSS.Vector3.subtract(attractor, center);
+        }
+
+        function onWindowResize(event) {
+          resize(container.offsetWidth, container.offsetHeight);
+          render();
+        }
+
+        // Let there be light!
+      
+
+

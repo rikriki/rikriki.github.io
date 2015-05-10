@@ -57,37 +57,7 @@
 }
 
 
-.overlay-hugeinc {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s, visibility 0s 0.5s;
-}
  
-.overlay-hugeinc.open {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.5s;
-}
- 
-.overlay-hugeinc nav {
-    perspective: 1200px;
-}
- 
-.overlay-hugeinc nav ul {
-    opacity: 0.4;
-    transform: translateY(-25%) rotateX(35deg);
-    transition: transform 0.5s, opacity 0.5s;
-}
- 
-.overlay-hugeinc.open nav ul {
-    opacity: 1;
-    transform: rotateX(0deg);
-}
- 
-.overlay-hugeinc.close nav ul {
-    transform: translateY(25%) rotateX(-35deg);
-}
-
 
 
 /* Overlay style */
@@ -95,9 +65,8 @@
     position: fixed;
     width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
-    background: rgba(153,204,51,0.9);
+    
+    background: #5a0000;
 }
 
 /* Overlay closing cross */
@@ -158,31 +127,75 @@
 
 .overlay1 ul li a:hover,
 .overlay1 ul li a:focus {
-    color: rgba(153,204,51,0.9);
+    color: #5a0000;
     background-color: #fff;
     text-decoration: none;
 }
 
 /* Effects */
+.nav-toggle:before {
+    background: none repeat scroll 0 0 #5a0000;
+    content: " ";
+    display: block;
+    height: 47px;
+    position: absolute;
+    transform: translate(-13px, -20px);
+    width: 63px;
+}
+.nav-toggle{
+
+}
+.nav-toggle .smallHeader {
+    background: none repeat scroll 0 0 #5a0000;
+    color: #fff;
+    font-weight: bold;
+    padding: 13px;
+    position: absolute;
+    right: 48px;
+    text-align: left;
+    text-transform: uppercase;
+    top: -10px;
+    width: 167px;
+    transition:all .5s;
+    transform:translate(100%,0%);
+    z-index: -1;
+}
+.nav-toggle.shrink .smallHeader {
+    transform:translate(0%,0%);
+}
 .overlay-hugeinc {
+    right: 29px;
+    top: 25px;
+    -webkit-transition: all 0.5s;
+    transition:all 0.5s;
+    -webkit-transform: scale(0.05, 0.1) translate(1000%, -500%);
+    transform: scale(0.05, 0.1) translate(1000%, -500%);
     opacity: 0;
     visibility: hidden;
-    -webkit-transition: opacity 0.5s, visibility 0s 0.5s;
-    transition: opacity 0.5s, visibility 0s 0.5s;
 }
 
 .overlay-hugeinc.open {
     opacity: 1;
     visibility: visible;
-    -webkit-transition: opacity 0.5s;
-    transition: opacity 0.5s;
+    -webkit-transition:  all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform: translate(0%,0%) scale(1,1);
+    transform: translate(0%,0%) scale(1,1);
+    top: 0;
+    right: 0;
 }
+
 
 .overlay-hugeinc nav {
     -webkit-perspective: 1200px;
     perspective: 1200px;
+    opacity: 0;
 }
-
+.overlay-hugeinc.open nav {
+    -webkit-transition:  all 0.5s 0.5s;
+    transition:  all 0.5s 0.5s;
+    opacity: 1;
+}
 .overlay-hugeinc nav ul {
     opacity: 0.4;
     -webkit-transform: translateY(-25%) rotateX(35deg);
@@ -196,7 +209,9 @@
     -webkit-transform: rotateX(0deg);
     transform: rotateX(0deg);
 }
-
+.overlay-hugeinc.close{
+    opacity: 1;
+}
 .overlay-hugeinc.close nav ul {
     -webkit-transform: translateY(25%) rotateX(-35deg);
     transform: translateY(25%) rotateX(-35deg);
@@ -356,14 +371,45 @@ hr.star-primary:after {
     margin: 0 auto;
 }
 
-header {
-    background: url("../img/work.jpg") repeat scroll center center rgba(255, 255, 255, .5);
-    text-align: center;
-    color: #fff;
-    
+/*Animation riki updated 1*/
 
+body {
+    transition:all .5s ease-in-out;
+    -webkit-transition:all .5s ease-in-out;
+    opacity: 1;
+}
+body.close {
+    opacity: 0;
 }
 
+.perspective-container {
+    transition:all .5s ease-in-out;
+    -webkit-transition:all .5s ease-in-out;
+    opacity: 1;
+    transform:scale(1);
+    -webkit-transform:scale(1);
+}
+.perspective-container.portfolio-hide {
+    opacity: 0;
+    transform:scale(.5);
+    -webkit-transform:scale(.5);
+}
+
+header {
+    background: rgba(255, 255, 255, .5);
+    text-align: center;
+    color: #fff;
+    transition:all .5s ease-in-out;
+    -webkit-transition:all .5s ease-in-out;
+    opacity: 0;
+    transform:translate(0px,-20px);
+    -webkit-transform:translate(0px,-20px);
+}
+header.open {
+    opacity: 1;
+    transform:translate(0px,0px);
+    -webkit-transform:translate(0px,0px);
+ }
 header .container {
     padding-top: 100px;
     padding-bottom: 50px;
@@ -384,12 +430,140 @@ header .intro-text .name {
 
 header .intro-text .name,h2.portfolioAnimate,h2.aboutAnimate,.col-lg-12.text-center > h2 {
     transition:all .5s ease-in-out;
+    -webkit-transition:all .5s ease-in-out;
 }
 
 header .intro-text .skills {
     font-size: 1.25em;
     font-weight: 300;
 }
+#profileImage{
+    border-radius: 80px;
+    border: 10px solid rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    transform:translate(0px,-20px);
+    transition: all .5s;
+    transition-delay: 1s; 
+    -webkit-transform:translate(0px,-20px);
+    -webkit-transition: all .5s;
+    -webkit-transition-delay: 1s; 
+}
+#headerContainer .intro-text{
+    transition: all .5s;
+    transition-delay: .5s;
+    -webkit-transition: all .5s;
+    -webkit-transition-delay: .5s;
+    opacity: 0;
+    transform:translate(0px,-20px);
+    -webkit-transform:translate(0px,-20px);
+}
+#headerContainer.open #profileImage{
+    opacity: 1;
+    transform:translate(0px,0px);
+    -webkit-transform:translate(0px,0px);
+}
+#headerContainer.open .intro-text{
+    opacity: 1;
+    transform:translate(0px,0px);
+    -webkit-transform:translate(0px,0px);
+}
+
+
+
+/* portfolio modal animation*/
+
+.fade{
+    transform:scale(.5);
+    transition: all .5s;
+    -webkit-transform:scale(.5);
+    -webkit-transition: all .5s;
+}
+.fade.in{
+    transform:scale(1);
+    transition: all .5s;
+    -webkit-transform:scale(1);
+    -webkit-transition: all .5s;
+}
+.fade .modal-content .container .row div .modal-body h2{
+    opacity: 0;
+    transform:translate(0px,-20px);
+    transition: all .5s .5s;   
+    -webkit-transform:translate(0px,-20px);
+    -webkit-transition: all .5s .5s;   
+}
+.fade.in .modal-content .container .row div .modal-body h2{
+    opacity: 1;
+    transform:translate(0px,0px);   
+    -webkit-transform:translate(0px,0px);   
+}
+
+.fade .modal-content .close-modal{ 
+    opacity: 0;
+    transform:translate(-20px,0px);
+    transition: all .5s;   
+    -webkit-transform:translate(-20px,0px);
+    -webkit-transition: all .5s;   
+}
+.fade.in .modal-content .close-modal{ 
+    opacity: 1;
+    transform:translate(0px,0px);
+    -webkit-transform:translate(0px,0px);
+}
+
+.fade .modal-content .container .row div .modal-body hr.star-primary {
+    opacity: 0;
+    transform:translate(0px,-20px);
+    transition: all .5s .8s; 
+    -webkit-transform:translate(0px,-20px);
+    -webkit-transition: all .5s .8s; 
+}
+.fade.in .modal-content .container .row div .modal-body hr.star-primary {
+    opacity: 1;
+    transform:translate(0px,0px);
+    -webkit-transform:translate(0px,0px);
+}
+
+.fade .modal-content .container .row div .modal-body hr.star-primary:after {
+    opacity: 0;
+    transform:translate(0px,-20px);
+    transition: all .5s 1s; 
+    -webkit-transform:translate(0px,-20px);
+    -webkit-transition: all .5s .8s; 
+}
+.fade.in .modal-content .container .row div .modal-body hr.star-primary:after {
+  opacity: 1;
+    transform:translate(0px,0px);
+    -webkit-transform:translate(0px,0px);
+}
+
+.fade .modal-content .container .row div .modal-body p,.fade .modal-content .container .row div .modal-body ul {
+    opacity: 0;
+    transform:translate(0px,-20px);
+    transition: all .5s 1.2s; 
+    -webkit-transform:translate(0px,-20px);
+    -webkit-transition: all .5s 1.2s; 
+}
+.fade.in .modal-content .container .row div .modal-body p,.fade.in .modal-content .container .row div .modal-body ul {
+  opacity: 1;
+    transform:translate(0px,0px);
+    -webkit-transform:translate(0px,0px);
+}
+
+.fade .modal-content .container .row div .modal-body img {
+    opacity: 0;
+    transform:translate(0px,-20px);
+    transition: all .5s 1.5s; 
+    -webkit-transform:translate(0px,-20px);
+    -webkit-transition: all .5s 1.5s; 
+}
+.fade.in .modal-content .container .row div .modal-body img {
+  opacity: 1;
+    transform:translate(0px,0px);
+    -webkit-transform:translate(0px,0px);
+}
+
+/* portfolio modal animation*/
+
 .banner-social-buttons {
     margin-top: 0;
 }
@@ -801,20 +975,7 @@ footer .footer-below {
     transform: rotate(90deg);
 }
 
- 
 
-#profileImage{
-    border-radius: 80px;
-    border: 10px solid rgba(255, 255, 255, 0.5);
-    transition: all .5s;
-    transition-delay: .5s; 
-    opacity: 1;
-    transform:translate(0px,0px);
-}
-#profileImage.riki{
-    opacity: 0;
-    transform:translate(0px,44px);
-}
 .overlay{
     background-color: #333;
     height: 100%;
@@ -843,33 +1004,6 @@ opacity: 0;
     width: 116px;
     height: 116px;
 }
-/* Animatged properties for scrollMagicJS*/
-.portfolio-item{
-    opacity:0;
-
-
-}
-h2.portfolioAnimate{
-    margin-top: -100px;
-}
-.portfolioAnimate,.aboutAnimate{
-    opacity: 0;
-}
-
-h3.aboutAnimate{
-    margin-top: 158px;
-}
-#aboutContent{
-    opacity: 0;
-    margin-top: 90px;
-}
-.aboutBorder{
-    opacity: 0;
-}
-ul.logo-icons.about li{
-    opacity: 0;
-}
-/* Animatged properties for scrollMagicJS*/
 
 
 /*SVG effects*/

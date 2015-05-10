@@ -14,7 +14,34 @@
 html, body, .perspective {
     width: 100%;
     height: 100%;
+    margin: 0; 
 }
+
+  
+    #prism-effect{
+    height: auto;
+    width: 100%;
+    }
+
+    #prism-effect #output {
+        height: 100%;
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+    }
+    .cover{
+        background: url(../img/cover.svg) no-repeat center center; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+        display:block;
+        position: absolute;
+        left: 0;
+        top:22px;
+    }
 button#showMenu {
     position: fixed;
     transition: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
