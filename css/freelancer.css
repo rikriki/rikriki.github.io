@@ -4,7 +4,7 @@
     padding: 0;
 }
 .recommendation.imageContainer{
-    text-align: right;
+    text-align: center;
 }
 .recommendation.imageContainer img{
     border-radius:58px;
@@ -260,6 +260,8 @@ body {
 }
 p {
     font-size: 20px;
+    transition:all .5s;
+    -webkit-transition:all .5s;
 }
 
 p.small {
@@ -353,7 +355,9 @@ hr.star-light2:after {
     color: #fff;
 
 }
-
+.logo-icons{
+    display: none;
+}
 ul.logo-icons li{margin:0px 20px;}
 
 hr.star-primary {
@@ -613,7 +617,8 @@ section h2 {
 
 section.success {
      color: #fff;   
-     background: url("../img/bg3.jpg") no-repeat fixed center center rgba(0, 0, 0, 0);
+     background: url("../img/bg3.jpg") no-repeat fixed 50% 0% rgba(0, 0, 0, 1);
+     /*background: url("../img/bg3.jpg") no-repeat scroll top center rgba(0, 0, 0, 1)*/
      padding: 100px 0;
 }
 
@@ -930,9 +935,10 @@ opacity: 0;
 }
 
 
-.footerSVG{
-    width: 116px;
+.footerSVG {
     height: 116px;
+    transition: all 0.5s ease 0s;
+    width: 116px;
 }
 
 
@@ -1097,12 +1103,23 @@ opacity: 0;
             padding-top: 75px;
         }
         section.success {
-         background: url("../img/bg3.jpg") no-repeat scroll top center rgba(0, 0, 0, 0)!important;
+         background: url("../img/bg3.jpg") no-repeat scroll rgba(0, 0, 0, 1)!important;
          padding: 50px 0;
         }
         header .intro-text .name,h2.portfolioAnimate,h2.aboutAnimate,.col-lg-12.text-center > h2 {
             font-size: 2.5em;
         }
+        .footerSVG {
+            width: 50px;
+            height: 50px;
+        }
+        .list-inline > li {
+            padding: 0px;
+        }
+        p {
+            font-size: 16px;
+        }
+
     }
     /*tablet*/
     @media (min-width: 768px) and (max-width: 991px) {
@@ -1110,7 +1127,7 @@ opacity: 0;
             font-size: 4em;
         }
         section.success {
-         background: url("../img/bg3.jpg") no-repeat scroll top center rgba(0, 0, 0, 0)!important;
+         background: url("../img/bg3.jpg") no-repeat scroll top center rgba(0, 0, 0, 1)!important;
          padding: 50px 0;
         }
 

@@ -26,7 +26,7 @@ html, body, .perspective {
     #prism-effect #output {
         height: 100%;
         overflow: hidden;
-        position: fixed;
+        position: absolute;
         top: 0;
     }
     .cover{

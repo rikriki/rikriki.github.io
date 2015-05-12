@@ -33,7 +33,8 @@ var docElem = window.document.documentElement,
 //http://www.behance.net/v2/users/rikirosales?callback=?&api_key=NGCVFuJ8w4IWMyLeaGGyg2X01orRKdq1
 //http://www.behance.net/v2/projects/475570?callback=?&api_key=NGCVFuJ8w4IWMyLeaGGyg2X01orRKdq1
 //http://www.behance.net/v2/users/rikirosales/projects?callback=?&api_key=NGCVFuJ8w4IWMyLeaGGyg2X01orRKdq1
-
+     window.scrollTo(0, 0);
+        
      init();
      loadMoreProject();
      startNAv();
@@ -208,7 +209,9 @@ function loadMoreProject(event){
 
             
             $("body").removeClass("pageLoading");
-             setTimeout( function(){$(".overlay").remove();},4000);
+            $(".overlay").addClass("close")
+             setTimeout( function(){
+                $(".overlay").remove();},4000);
                headerContainer = document.getElementById('headerContainer');
                header = document.getElementById('page-header');
                classie.add(headerContainer,"open");
