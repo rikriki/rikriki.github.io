@@ -52,96 +52,6 @@
 
     <div class="perspective-container">
         <div class="wrapper">
-            <script id="profile-template" type="text/x-handlebars-template">
-            <header id="page-header">
-
-                <div id="prism-effect">
-                    <div id="output">
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12" id="headerContainer">
-                                <img class="img-responsive" id="profileImage" src="{{user.images.[138]}}" alt="">
-                                <div class="intro-text">
-                                    <span class="name">{{user.display_name}}</span>
-
-                                    <div><hr class="star-light2"><hr class="star-light"><hr class="star-light2"></div>
-                                    <span class="skills">{{user.sections.Hi}}</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <div class="cover"></div>    
-                </div>
-
-            </header>
-            </script> 
-            <script id="about-template" type="text/x-handlebars-template">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                <p>{{user.sections.About}}</p>
-                </div>
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                            <a href="FrederickARosales_CV.docx" class="btn btn-lg btn-outline">
-                                <i class="fa fa-download"></i> Download my CV
-                            </a>
-                </div>
-            </script>
-            <script id="project-template" type="text/x-handlebars-template">
-                {{#each projects }}
-                 <div class=" portfolio-item">
-                            <a href="#portfolioModal1" class="portfolio-link" alt="{{this.id}}"  data-toggle="modal">
-                            
-                              
-                            <div class="caption">
-                                <p>{{this.name}}</p>
-                                <div class="caption-content">
-                                    <i class="fa fa-search-plus fa-3x"></i>
-                                </div>
-                            </div>
-                            <img src="{{this.covers.[404]}}" class="img-responsive lazyOwl" width="400" heigth="313" alt="" />
-                        </a>
-                    </div>
-               {{/each}}
-            </script>  
-
-            <script id="projectID-template" type="text/x-handlebars-template">
-                        <div class="close-modal" data-dismiss="modal">
-                            <div class="lr">
-                                <div class="rl">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-10 col-lg-offset-1">
-                                    <div class="modal-body">
-                                        <h2>{{project.name}}</h2>
-                                        <hr class="star-primary">
-                                        <p>{{project.description}}</p>
-                                        <ul class="list-inline item-details">
-                                            <li>Role: 
-                                           
-                                            <a href=""><strong>{{project.fields}}</strong></a> 
-                                            
-                                            </li>
-                                            
-                                        </ul>
-                                        {{#each project.modules }}
-                                             
-                                             {{#if this.sizes.max_1240}}
-                                                 <img src="{{this.sizes.max_1240}}" class="img-responsive img-centered" alt=""><br/>
-                                              {{else}}
-                                                  <img src="{{this.src}}" class="img-responsive img-centered" alt=""><br/>
-                                              {{/if}}
-                                        {{/each}}
-                                        
-                                        
-                                        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-            </script>      
             <div class="header">
             </div>  
             <section id="portfolio">
@@ -290,11 +200,111 @@
                 </ul>
             </nav>
 </div>
-
-
-        
-             
 <!-- /Portfolio Modals -->
+
+            <script id="profile-template" type="text/x-handlebars-template">
+                <header id="page-header">
+
+                    <div id="prism-effect">
+                        <div id="output">
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12" id="headerContainer">
+                                    <img class="img-responsive" id="profileImage" src="{{user.images.[138]}}" alt="">
+                                    <div class="intro-text">
+                                        <span class="name">{{user.display_name}}</span>
+
+                                        <div><hr class="star-light2"><hr class="star-light"><hr class="star-light2"></div>
+                                        <span class="skills">{{user.sections.Hi}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="cover"></div>    
+                    </div>
+                </header>
+            </script> 
+            <script id="about-template" type="text/x-handlebars-template">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                <p>{{user.sections.About}}</p>
+                </div>
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                            <a href="FrederickARosales_CV.docx" class="btn btn-lg btn-outline">
+                                <i class="fa fa-download"></i> Download my CV
+                            </a>
+                </div>
+                <div class="linkedin owl-carousel col-lg-8 text-center">
+                   
+                </div>
+            </script>
+            <script id="linkedin-template" type="text/x-handlebars-template">
+                    {{#each user.recommendations.items }}
+                        <section class="row recommendation">
+                            <div class="recommendation imageContainer col-lg-2 col-lg-offset-1">
+                                <img src="{{this.image}}" />
+                            </div>
+                            <div class="recommendation textContainer col-lg-8">
+                                <h3>{{this.name}}</h3>
+                                <h4>{{this.position}} | {{this.company}}</h4>
+                                <div>{{{this.comments}}}</div>
+                            </div>
+                        </section>
+                    {{/each}}
+            </script>
+            <script id="project-template" type="text/x-handlebars-template">
+                {{#each projects }}
+                 <div class=" portfolio-item">
+                            <a href="#portfolioModal1" class="portfolio-link" alt="{{this.id}}"  data-toggle="modal">
+                            <div class="caption">
+                                <p>{{this.name}}</p>
+                                <div class="caption-content">
+                                    <i class="fa fa-search-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="{{this.covers.[404]}}" class="img-responsive lazyOwl" width="400" heigth="313" alt="" />
+                        </a>
+                    </div>
+               {{/each}}
+            </script>  
+            <script id="projectID-template" type="text/x-handlebars-template">
+                        <div class="close-modal" data-dismiss="modal">
+                            <div class="lr">
+                                <div class="rl">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-10 col-lg-offset-1">
+                                    <div class="modal-body">
+                                        <h2>{{project.name}}</h2>
+                                        <hr class="star-primary">
+                                        <p>{{project.description}}</p>
+                                        <ul class="list-inline item-details">
+                                            <li>Role: 
+                                           
+                                            <a href=""><strong>{{project.fields}}</strong></a> 
+                                            
+                                            </li>
+                                            
+                                        </ul>
+                                        {{#each project.modules }}
+                                             
+                                             {{#if this.sizes.max_1240}}
+                                                 <img src="{{this.sizes.max_1240}}" class="img-responsive img-centered" alt=""><br/>
+                                              {{else}}
+                                                  <img src="{{this.src}}" class="img-responsive img-centered" alt=""><br/>
+                                              {{/if}}
+                                        {{/each}}
+                                        
+                                        
+                                        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            </script>  
     <script src="js/modernizr.custom.25376.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
     <script src="js/jquery-1.10.2.js"></script>

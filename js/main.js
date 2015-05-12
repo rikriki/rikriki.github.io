@@ -121,6 +121,7 @@ function init() {
             sessionStorage.setItem('behanceUser', data);
             setUserTemplate();
             setAboutTemplate();
+            setLinkedinTemplate();
 
         }).error(function(jqXhr, textStatus, error) {
                 alert("ERROR on profile:  " + textStatus + ", " + error);
@@ -146,6 +147,21 @@ function init() {
             template    = Handlebars.compile(getTemplate),
             result      = template(userData);
             $('div#aboutContent').html(result);
+        }
+        function setLinkedinTemplate() {
+            var userData    = JSON.parse(sessionStorage.getItem('behanceUser')),
+            getTemplate = $('#linkedin-template').html(),
+            template    = Handlebars.compile(getTemplate),
+            result      = template(userData);
+            
+            $('div.linkedin').html(result);
+            $(".linkedin").owlCarousel({
+               singleItem:true,
+               items:3,
+               responsive:true,
+               lazyLoad:true,
+               navigation : true
+            });
         }
     }
 function projectIDInit(projectID){
@@ -185,9 +201,6 @@ function loadMoreProject(event){
      .done(function() {
         setTimeout( function(){
 
-           // $("#loadMore ").hide();
-            //$(".overlay").addClass("close");
-            //$("img#profileImage").removeClass("riki"); 
             headerContainer = document.getElementById('headerContainer');
             header = document.getElementById('page-header');
             classie.add(headerContainer,"open");
@@ -196,15 +209,14 @@ function loadMoreProject(event){
             
             $("body").removeClass("pageLoading");
              setTimeout( function(){$(".overlay").remove();},4000);
-               //window.scrollTo(0,$(window.location.hash).offset().top);
-               container = document.getElementById('prism-effect');
-               output = document.getElementById('output');
-               initialise(); 
                headerContainer = document.getElementById('headerContainer');
                header = document.getElementById('page-header');
                classie.add(headerContainer,"open");
                classie.add(header,"open") ;
                perspective = document.querySelector('.perspective-container') 
+               container = document.getElementById('prism-effect');
+               output = document.getElementById('output');
+               initialise(); 
 
         }, 2000 );
        
@@ -226,6 +238,7 @@ function loadMoreProject(event){
            navigation : true
          });
     }
+
 }    
 
 
@@ -349,7 +362,6 @@ function loadMoreProject(event){
         // Methods
         //------------------------------
         function initialise() {
-        console.log("riki")
           createRenderer();
           createScene();
           createMesh();

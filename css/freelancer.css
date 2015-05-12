@@ -1,62 +1,90 @@
-.nav-toggle {
-     background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
-    border: medium none;
-    cursor: pointer;
-    padding: 10px 35px 16px 0;
-    position: fixed;
-    right: 15px;
-    top: 10px;
-    z-index: 1048;
+/*Linkedin Recommendation*/
+.row.recommendation {
+    margin: 45px 0 0;
+    padding: 0;
 }
-.nav-toggle:focus {
-    outline: medium none;
+.recommendation.imageContainer{
+    text-align: right;
 }
-.nav-toggle span, .nav-toggle span:before, .nav-toggle span:after {
-    background: none repeat scroll 0 0 #fff;
-    border-radius: 1px;
-    content: "";
-    cursor: pointer;
-    display: block;
-    height: 5px;
-    position: absolute;
-    width: 35px;
+.recommendation.imageContainer img{
+    border-radius:58px;
+    border:10px solid rgba(255,255,255,0.5)
 }
-.nav-toggle span:before {
-    top: -10px;
-}
-.nav-toggle span:after {
-    bottom: -10px;
-}
-.nav-toggle span, .nav-toggle span:before, .nav-toggle span:after {
-    transition: all 300ms ease-in-out 0s;
-}
-.nav-toggle.active span {
-    background-color: transparent!important;
-}
-.nav-toggle.active span:before, .nav-toggle.active span:after {
-    top: 0;
-}
-.nav-toggle.active span:before {
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-}
-.nav-toggle.active span:after {
-    top: 10px;
-    transform: translateY(-10px) rotate(-45deg);
-    -webkit-transform: translateY(-10px) rotate(-45deg);
+.recommendation.textContainer{
+    font-size: 14px;
+    text-align: left;
+}                    
+.recommendation.textContainer h3{
+    font-size: 18px;margin: 5px 0 0;
 }
 
-.nav-toggle.portfolio span,.nav-toggle.portfolio span::before,.nav-toggle.portfolio span::after{
-    background-color: #000;
+.recommendation.textContainer h4,.recommendation div p{
+    font-size: 14px;margin: 5px 0 10px 0px;
 }
-.nav-toggle.about span,.nav-toggle.about span::before,.nav-toggle.about span::after {
-    background-color: #fff;
+.recommendation.textContainer p{
+    font-size: 14px;
 }
-.nav-toggle.contact  span,.nav-toggle.contact span::before,.nav-toggle.contact span::after {
-    background-color: #28c3ab;
-}
+/*Linkedin Recommendation*/
+/* Nav style */
+    .nav-toggle {
+         background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+        border: medium none;
+        cursor: pointer;
+        padding: 10px 35px 16px 0;
+        position: fixed;
+        right: 15px;
+        top: 10px;
+        z-index: 1048;
+    }
+    .nav-toggle:focus {
+        outline: medium none;
+    }
+    .nav-toggle span, .nav-toggle span:before, .nav-toggle span:after {
+        background: none repeat scroll 0 0 #fff;
+        border-radius: 1px;
+        content: "";
+        cursor: pointer;
+        display: block;
+        height: 5px;
+        position: absolute;
+        width: 35px;
+    }
+    .nav-toggle span:before {
+        top: -10px;
+    }
+    .nav-toggle span:after {
+        bottom: -10px;
+    }
+    .nav-toggle span, .nav-toggle span:before, .nav-toggle span:after {
+        transition: all 300ms ease-in-out 0s;
+    }
+    .nav-toggle.active span {
+        background-color: transparent!important;
+    }
+    .nav-toggle.active span:before, .nav-toggle.active span:after {
+        top: 0;
+    }
+    .nav-toggle.active span:before {
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+    }
+    .nav-toggle.active span:after {
+        top: 10px;
+        transform: translateY(-10px) rotate(-45deg);
+        -webkit-transform: translateY(-10px) rotate(-45deg);
+    }
 
+    .nav-toggle.portfolio span,.nav-toggle.portfolio span::before,.nav-toggle.portfolio span::after{
+        background-color: #000;
+    }
+    .nav-toggle.about span,.nav-toggle.about span::before,.nav-toggle.about span::after {
+        background-color: #fff;
+    }
+    .nav-toggle.contact  span,.nav-toggle.contact span::before,.nav-toggle.contact span::after {
+        background-color: #28c3ab;
+    }
 
+/* Nav style */
  
 
 
@@ -221,18 +249,6 @@
     transform: translateY(25%) rotateX(-35deg);
 }
 
-@media screen and (max-height: 30.5em) {
-    .overlay1 nav {
-        height: 70%;
-        font-size: 24px;
-    }
-    .overlay1 ul li {
-        min-height: 34px;
-    }
-}
-
-
-
 
 
 body {
@@ -307,11 +323,6 @@ hr.star-light:after,hr.star-light:before {
 
 }
 
-
-
-
-
-
 hr.star-light2 {
     margin: 25px auto 30px;
     padding: 0;
@@ -344,23 +355,6 @@ hr.star-light2:after {
 }
 
 ul.logo-icons li{margin:0px 20px;}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 hr.star-primary {
     border-color: #5a0000;
@@ -585,47 +579,6 @@ top:50%;
 
 
 
-@media(min-width:768px) {
-    ul.banner-social-buttons>li:last-child {
-        margin-bottom: 0;
-    }
-    header .container {
-        padding: 200px 0 100px;
-    }
-
-    header .intro-text .name,h2.portfolioAnimate,h2.aboutAnimate,.col-lg-12.text-center > h2 {
-        font-size: 5em;
-    }
-    
-    header .intro-text .skills {
-        font-size: 1.75em;
-    }
-}
-
-@media(min-width:768px) {
-    .navbar-fixed-top {
-        padding: 25px 0;
-        -webkit-transition: padding .3s;
-        -moz-transition: padding .3s;
-        transition: padding .3s;
-    }
-
-    .navbar-fixed-top .navbar-brand {
-        font-size: 2em;
-        -webkit-transition: all .3s;
-        -moz-transition: all .3s;
-        transition: all .3s;
-    }
-
-    .navbar-fixed-top.navbar-shrink {
-        padding: 10px 0;
-    }
-
-    .navbar-fixed-top.navbar-shrink .navbar-brand {
-        font-size: 1.5em;
-    }
-}
-
 .navbar {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -663,42 +616,8 @@ section.success {
      background: url("../img/bg3.jpg") no-repeat fixed center center rgba(0, 0, 0, 0);
      padding: 100px 0;
 }
-/*iPhone and smaller*/
-@media(max-width:767px) {
-    .cover{
-        display: none!important;
-    }   
-    .css {
-        margin: 10px 2px!important;
-        width: 50px!important;
-        height: 50px!important;
-    }
-    section {
-        padding: 75px 0;
-    }
 
-    section.first {
-        padding-top: 75px;
-    }
-    section.success {
-     background: url("../img/bg3.jpg") no-repeat scroll top center rgba(0, 0, 0, 0)!important;
-     padding: 50px 0;
-    }
-    header .intro-text .name,h2.portfolioAnimate,h2.aboutAnimate,.col-lg-12.text-center > h2 {
-        font-size: 2.5em;
-    }
-}
-/*tablet*/
-@media (min-width: 768px) and (max-width: 991px) {
-    header .intro-text .name,h2.portfolioAnimate,h2.aboutAnimate,.col-lg-12.text-center > h2 {
-        font-size: 4em;
-    }
-    section.success {
-     background: url("../img/bg3.jpg") no-repeat scroll top center rgba(0, 0, 0, 0)!important;
-     padding: 50px 0;
-    }
 
-}
 #portfolio .portfolio-item {
     right: 0;
     margin: 0 0 15px;
@@ -778,11 +697,7 @@ section.success {
     z-index: 2;
 }
 
-@media(min-width:767px) {
-    #portfolio .portfolio-item {
-        margin: 0 0 30px;
-    }
-}
+
 
 .btn-outline {
     margin-top: 15px;
@@ -1032,89 +947,6 @@ opacity: 0;
   transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
 }
 /*SVG effects*/
-/*Sublime text loading*/
-@-moz-keyframes loading {
-  0% {
-    left: 0;
-  }
-  50% {
-    left: 8.33333em;
-  }
-  100% {
-    left: 0;
-  }
-}
-@-webkit-keyframes loading {
-  0% {
-    left: 0;
-  }
-  50% {
-    left: 8.33333em;
-  }
-  100% {
-    left: 0;
-  }
-}
-@keyframes loading {
-  0% {
-    left: 0;
-  }
-  50% {
-    left: 8.33333em;
-  }
-  100% {
-    left: 0;
-  }
-}
-.st-loader {
-  width: 10em;
-  height: 2.5em;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -1.25em 0 0 -5em;
-  box-sizing: border-box;
-}
-
-.st-loader:before,
-.st-loader:after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 1.25em;
-  box-sizing: border-box;
-  border: 0.25em solid #f80;
-}
-
-.st-loader:before {
-  left: -0.76923em;
-  border-right: 0;
-}
-
-.st-loader:after {
-  right: -0.76923em;
-  border-left: 0;
-}
-
-.st-loader .equal {
-  display: block;
-  position: absolute;
-  top: 50%;
-  margin-top: -0.5em;
-  left: 4.16667em;
-  height: 1em;
-  width: 1.66667em;
-  border: 0.25em solid #f80;
-  box-sizing: border-box;
-  border-width: 0.25em 0;
-  -moz-animation: loading 1.5s infinite ease-in-out;
-  -webkit-animation: loading 1.5s infinite ease-in-out;
-  animation: loading 1.5s infinite ease-in-out;
-}
-
-/*Sublime text loading*/
 
 
 #projects figure {
@@ -1194,8 +1026,102 @@ opacity: 0;
 }
 
 
-/* Media queries */
-@media screen and (max-width: 50em) {
+
+
+/* Media CSS*/
+    @media screen and (max-height: 30.5em) {
+        .overlay1 nav {
+            height: 70%;
+            font-size: 24px;
+        }
+        .overlay1 ul li {
+            min-height: 34px;
+        }
+    }
+
+    @media(min-width:768px) {
+        ul.banner-social-buttons>li:last-child {
+            margin-bottom: 0;
+        }
+        header .container {
+            padding: 200px 0 100px;
+        }
+
+        header .intro-text .name,h2.portfolioAnimate,h2.aboutAnimate,.col-lg-12.text-center > h2 {
+            font-size: 5em;
+        }
+        
+        header .intro-text .skills {
+            font-size: 1.75em;
+        }
+    }
+
+    @media(min-width:768px) {
+        .navbar-fixed-top {
+            padding: 25px 0;
+            -webkit-transition: padding .3s;
+            -moz-transition: padding .3s;
+            transition: padding .3s;
+        }
+
+        .navbar-fixed-top .navbar-brand {
+            font-size: 2em;
+            -webkit-transition: all .3s;
+            -moz-transition: all .3s;
+            transition: all .3s;
+        }
+
+        .navbar-fixed-top.navbar-shrink {
+            padding: 10px 0;
+        }
+
+        .navbar-fixed-top.navbar-shrink .navbar-brand {
+            font-size: 1.5em;
+        }
+    }
+    /*iPhone and smaller*/
+    @media(max-width:767px) {
+        .cover{
+            display: none!important;
+        }   
+        .css {
+            margin: 10px 2px!important;
+            width: 50px!important;
+            height: 50px!important;
+        }
+        section {
+            padding: 75px 0;
+        }
+
+        section.first {
+            padding-top: 75px;
+        }
+        section.success {
+         background: url("../img/bg3.jpg") no-repeat scroll top center rgba(0, 0, 0, 0)!important;
+         padding: 50px 0;
+        }
+        header .intro-text .name,h2.portfolioAnimate,h2.aboutAnimate,.col-lg-12.text-center > h2 {
+            font-size: 2.5em;
+        }
+    }
+    /*tablet*/
+    @media (min-width: 768px) and (max-width: 991px) {
+        header .intro-text .name,h2.portfolioAnimate,h2.aboutAnimate,.col-lg-12.text-center > h2 {
+            font-size: 4em;
+        }
+        section.success {
+         background: url("../img/bg3.jpg") no-repeat scroll top center rgba(0, 0, 0, 0)!important;
+         padding: 50px 0;
+        }
+
+    }
+    @media(min-width:767px) {
+        #portfolio .portfolio-item {
+            margin: 0 0 30px;
+        }
+    }
+
+    @media screen and (max-width: 50em) {
  
     .grid figure {
         display: inline-block;
@@ -1204,86 +1130,4 @@ opacity: 0;
         width: 100%;
     }
 }
-/*---------------*/
-/***** Julia *****/
-/*---------------*/
-
-figure.effect-julia {
-    background: #2f3238;
-}
-
-figure.effect-julia img {
-    max-width: none;
-    height: 313px;
-    -webkit-transition: opacity 1s, -webkit-transform .5s;
-    transition: opacity 1s, transform .5s;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-}
-
-figure.effect-julia figcaption {
-    text-align: left;
-}
-
-figure.effect-julia h2 {
-    position: relative;
-    padding: 0.5em 0;
-}
-
-figure.effect-julia p {
-    display: inline-block;
-    margin: 0 0 0.25em;
-    padding: 0.4em 1em;
-    background: rgba(255,255,255,0.9);
-    color: #2f3238;
-    text-transform: none;
-    font-weight: bold;
-    font-size: 1em !important;
-    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-    transition: opacity 0.35s, transform 0.35s;
-    -webkit-transform: translate3d(-360px,0,0);
-    transform: translate3d(-360px,0,0);
-}
-
-figure.effect-julia p:first-child {
-    -webkit-transition-delay: 0.15s;
-    transition-delay: 0.15s;
-}
-
-figure.effect-julia p:nth-of-type(2) {
-    -webkit-transition-delay: 0.1s;
-    transition-delay: 0.1s;
-}
-
-figure.effect-julia p:nth-of-type(3) {
-    -webkit-transition-delay: 0.05s;
-    transition-delay: 0.05s;
-}
-
-figure.effect-julia:hover p:first-child {
-    -webkit-transition-delay: 0s;
-    transition-delay: 0s;
-}
-
-figure.effect-julia:hover p:nth-of-type(2) {
-    -webkit-transition-delay: 0.05s;
-    transition-delay: 0.05s;
-}
-
-figure.effect-julia:hover p:nth-of-type(3) {
-    -webkit-transition-delay: 0.1s;
-    transition-delay: 0.1s;
-}
-
-figure.effect-julia:hover img {
-    opacity: 0.4!important;
-    -webkit-transform: scale3d(1.1,1.1,1);
-    transform: scale3d(1.1,1.1,1);
-}
-
-figure.effect-julia:hover p {
-    opacity: 1;
-    -webkit-transform: translate3d(-50px,0,0);
-    transform: translate3d(-50px,0,0);
-}
-
+/* Media CSS*/    

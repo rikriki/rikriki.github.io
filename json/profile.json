@@ -32,6 +32,63 @@
          "Hi":"I am a Full stack developer and interactive designer from Dubai UAE with more than 8+ years experience in interactive development and digital marketing.\n",
          "About":"I'm Riki currently working as Senior Software Engineer for Interactive development at Emirates Airlines. Prior in working at Emirates,  I've also  worked for a multinational Agency which caters  several international brands like Toyota, Lexus, Toys 'R' Us, Ikea, Marks & Spencer and Honda."
       },
+      "recommendations":{
+         "items":[
+         {
+            "image":"img/linkedin/ali.jpg",
+            "name":"Ali El Hallak",
+            "company":"Al-Futtaim - IKEA, Toys 'R' Us",
+            "position":"Digital Account Manager",
+            "comments":"I've worked with Frederick at GMASCO (Al-Futtaim) and he was one of the most dedicated professionals there. His work was exceptional and appreciated by clients such as Lexus, IKEA, and Dubai Festival City. Frederick is dedicated and takes ownership of his jobs to deliver great results. He has a strong sense of responsibility and creativity in addition to high level of technical expertise. <br/>Frederick is a strong asset to any organisation and I wish him the best with his future career. I will surely recommend him to any employer looking for innovative and highly reliable person."
+         },
+         {
+            "image":"img/linkedin/anees.jpg",
+            "name":"Anees Abubacker",
+            "company":"Al-Futtaim",
+            "position":"Consultant – IBM/Microsoft Development at Al-Futtaim Enterprise IT",
+            "comments":"Frederick and I worked together for 4 or so years at Al-Futtaim. He is one of the most talented, hardworking & professional colleagues I collaborated with. His passion, drive & creativity make him an invaluable asset to any organization.<br/>Frederick was instrumental in enhancing the visual appeal and usability of our client’s websites like Toys ‘R’ Us, Honda, and Toyota. As a web designer he ranks among the brightest & best in his field. If you have an opportunity to bring Frederick into your organization, I would recommend you do so without having any hesitation."
+         },
+         {
+            "image":"img/linkedin/anish.jpg",
+            "name":"Anish N. Pandit",
+            "company":"Al-Futtaim",
+            "position":"GENERAL MANAGER - GULF MARKETING RESEARCH (GMR) AND GMASCO DIGITAL",
+            "comments":"Frederick was one of the best team members within the E-business. His perseverant attitude always seemed to amaze me, as he would always find a solution to any issues that we had in the digital department. He was one of the key members of the team who managed the debugging, fixing, quality assurance and maintenance of over 1000 lines of JavaScript codes for any challenging website. In addition to his technical skills he also contributed to UX and UI of several websites, microsites, mobilesites. His dedication, leadership, team player spirit and professional approach, and above all a never give up attitude supported the launching of several website projects in the desired time with the expected quality. Frederick will be a great asset to any company planning to hire him. I wish him all the best for all his future endeavors."
+         },
+         {
+            "image":"img/linkedin/ion.jpg",
+            "name":"Ion Gonzaga",
+            "company":"Emirates Airlines",
+            "position":"Senior UX Designer",
+            "comments":"I’ve had the privilege of working with Frederick for little more than 25 months at Emirates Airline and I would say that he is a team player, innovative and great person in and outside work. He has a balance of development and design skills that make him an overall designer/developer or what other say as a “Full stack developer”. He is always our go-to guy if it's about interactive user experience like RWD, HTML5 and other mobile device interactive experience. His friendly and accommodating personality would make you want to work with him on projects. I would highly recommend him and I'm 100% sure that he would be a great asset to everyone. "
+         },
+         {
+            "image":"img/linkedin/pretheesh.jpg",
+            "name":"Pretheesh Thomas",
+            "company":"Emirates Airlines",
+            "position":"UX Designer",
+            "comments":"It's been a real pleasure working with Frederick for almost 2 years. Frederick was one of the most dedicated professionals I’ve worked for at Emirates Airline. Result driven, proactive, open minded and multi-skilled Interactive developer. Has deep technical recognition in HTML5, AngularJS, Grunt, Node and CSS3. No matter how complex the problem is, he will always come up with a brilliant, elegant, and cost-effective solution. Frederick would be a great asset for any organization and I would confidently recommend him to any company. "
+         },
+         {
+            "image":"img/linkedin/april.jpg",
+            "name":" April Salvador",
+            "company":"Emirates Airlines",
+            "position":"Senior UX Designer",
+            "comments":"Frederick is my colleague for almost 7 years now starting from Al-Futtaim group(Digital Marketing Department) up to Emirates Airline(UI&UX and Interactive department) and I was totally impressed with Frederick’s ability to adapt immediately from different technologies starting from HTML/CSS Table-less Layout, Flash AS1-AS3 microsites/applications, Augmented reality, mobile and HTML5 applications to name a few.<br/>He is very passionate and has great vision for his work. His focus keeps everything moving smoothly, he makes sure all the deadlines are met, and makes sure that whatever project he is working on meets the highest standards.<br/>Frederick would be a true asset to any company and I will highly recommend him.  "
+         },
+         {
+            "image":"img/linkedin/ashraf.jpg",
+            "name":"Ashraf Ahmed",
+            "company":"Emirates Airlines",
+            "position":"Process and Governance Lead ",
+            "comments":"Frederick exhibited outstanding enthusiasm and commitment in developing an interactive solution for IT Engagement Model. His attention to details and quality in taking up the finer requirements and providing the solution is commendable. "
+         }
+
+
+
+
+         ]
+      },
       "website":"http:\/\/behance.net\/rikirosales",
       "stats":{
          "followers":37,
