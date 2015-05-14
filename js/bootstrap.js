@@ -855,7 +855,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap requires jQuery'
         .attr('aria-hidden', false)
         .scrollTop(0)
         .css('overflow','auto')
-      },500)
+      },1000)
       that.enforceFocus()
 
       var e = $.Event('shown.bs.modal', { relatedTarget: _relatedTarget })
