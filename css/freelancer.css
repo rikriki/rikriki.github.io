@@ -453,10 +453,10 @@ header .intro-text .skills {
     border-radius: 80px;
     border: 10px solid rgba(255, 255, 255, 0.5);
     opacity: 0;
-    transform:translate(0px,-20px);
+    transform:translate(0px,-20px) rotateY(90deg);
     transition: all .5s;
     transition-delay: 1s; 
-    -webkit-transform:translate(0px,-20px);
+    -webkit-transform:translate(0px,-20px) rotateY(90deg);
     -webkit-transition: all .5s;
     -webkit-transition-delay: 1s; 
 }
@@ -471,7 +471,8 @@ header .intro-text .skills {
 }
 #headerContainer.open #profileImage{
     opacity: 1;
-    transform:translate(0px,0px);
+    transform:translate(0px,0px) rotateY(0deg);
+    -webkit-transform:translate(0px,0px) rotateY(0deg);
 }
 #headerContainer.open .intro-text{
     opacity: 1;
