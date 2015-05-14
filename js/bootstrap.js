@@ -842,7 +842,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap requires jQuery'
 
       that.$element
         .show()
-        .scrollTop(0)
+        
         .css('overflow','hidden')
 
       if (transition) {
@@ -853,14 +853,9 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap requires jQuery'
         that.$element
         .addClass('in')
         .attr('aria-hidden', false)
-      },500)
-      
-
-
-      setTimeout(function(){
-        that.$element
+        .scrollTop(0)
         .css('overflow','auto')
-      },2000)  
+      },500)
       that.enforceFocus()
 
       var e = $.Event('shown.bs.modal', { relatedTarget: _relatedTarget })
@@ -876,9 +871,10 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap requires jQuery'
   }
 
   Modal.prototype.hide = function (e) {
+    //Timeout should be based on the css3 delay
     setTimeout(function(){
       $('.perspective-container').removeClass('portfolio-hide')
-    },500)
+    },1000)
     if (e) e.preventDefault()
 
     e = $.Event('hide.bs.modal')
@@ -897,6 +893,8 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap requires jQuery'
       .removeClass('in')
       .attr('aria-hidden', true)
       .off('click.dismiss.bs.modal')
+      .css('overflow','hidden')
+    
 
     $.support.transition && this.$element.hasClass('fade') ?
       this.$element
@@ -927,7 +925,11 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap requires jQuery'
 
   Modal.prototype.hideModal = function () {
     var that = this
-    this.$element.hide()
+   
+    //Timeout should be based on the css3 delay
+    setTimeout(function(){
+      this.$element.hide()
+    },1000)
     this.backdrop(function () {
       that.removeBackdrop()
       that.$element.trigger('hidden.bs.modal')

@@ -18,9 +18,9 @@
          {
             "id":2636362,
             "type":"image",
-            "src":"img/glassTouch1.jpg",
-            "width":1024,
-            "height":768,
+            "src":"img/dn1.jpg",
+            "width":960,
+            "height":700,
             "sizes":[
 
             ]
@@ -28,9 +28,9 @@
          {
             "id":2636362,
             "type":"image",
-            "src":"img/glassTouch2.jpg",
-            "width":1024,
-            "height":768,
+            "src":"img/dna.jpg",
+            "width":960,
+            "height":700,
             "sizes":[
 
             ]
@@ -38,9 +38,9 @@
          {
             "id":2636362,
             "type":"image",
-            "src":"img/glassTouch3.jpg",
-            "width":1024,
-            "height":768,
+            "src":"img/dn1b.jpg",
+            "width":960,
+            "height":700,
             "sizes":[
 
             ]
@@ -48,9 +48,9 @@
          {
             "id":2636362,
             "type":"image",
-            "src":"img/glassTouch4.jpg",
-            "width":1024,
-            "height":768,
+            "src":"img/dn1c.jpg",
+            "width":960,
+            "height":700,
             "sizes":[
 
             ]
@@ -58,13 +58,44 @@
          {
             "id":2636362,
             "type":"image",
-            "src":"img/glassTouch5.jpg",
-            "width":1024,
-            "height":768,
+            "src":"img/dn2a.jpg",
+            "width":960,
+            "height":700,
+            "sizes":[
+
+            ]
+         },
+         {
+            "id":2636362,
+            "type":"image",
+            "src":"img/dn2b.jpg",
+            "width":960,
+            "height":700,
+            "sizes":[
+
+            ]
+         },
+         {
+            "id":2636362,
+            "type":"image",
+            "src":"img/dn2c.jpg",
+            "width":960,
+            "height":700,
+            "sizes":[
+
+            ]
+         },
+         {
+            "id":2636362,
+            "type":"image",
+            "src":"img/dn2d.jpg",
+            "width":960,
+            "height":700,
             "sizes":[
 
             ]
          }
+
       ]
    },
    "http_code":200

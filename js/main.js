@@ -209,7 +209,7 @@ function loadMoreProject(event){
 
             
             $("body").removeClass("pageLoading");
-            $(".overlay").addClass("close")
+            //$(".overlay").addClass("close")
              setTimeout( function(){
                 $(".overlay").remove();},4000);
                headerContainer = document.getElementById('headerContainer');

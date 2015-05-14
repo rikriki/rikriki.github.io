@@ -255,9 +255,14 @@ body {
     overflow-x: hidden;
 }
 .pageLoading{
- overflow-y: hidden;   
+ /*overflow-y: hidden;   */
  height: 100%;
 }
+
+.pageLoading .perspective-container,.pageLoading .portfolioContainer-container{
+    opacity: 0;
+}
+
 p {
     font-size: 20px;
     transition:all .5s;
@@ -356,7 +361,7 @@ hr.star-light2:after {
 
 }
 .logo-icons{
-    display: none;
+    display: block;
 }
 ul.logo-icons li{margin:0px 20px;}
 
@@ -385,11 +390,11 @@ body.close {
 }
 
 .perspective-container {
-    transition:all .5s ease-in-out;
-    -webkit-transition:all .5s ease-in-out;
+    transition:all .5s ease-in-out .3s;
+    -webkit-transition:all .5s ease-in-out .3s;
     opacity: 1;
-    transform:scale(1);
-    -webkit-transform:scale(1);
+    transform:scale(1) translate(0%, 0%);
+    -webkit-transform:scale(1) translate(0%, 0%);
 }
 .perspective-container.hideMe{
      opacity: 0;
@@ -397,8 +402,8 @@ body.close {
 }
 .perspective-container.portfolio-hide {
     opacity: 0;
-    transform:scale(.8);
-    -webkit-transform:scale(.8);
+    transform:scale(1) translate(-100%, 0%);;
+    -webkit-transform:scale(1) translate(-100%, 0%);
 }
 
 header {
@@ -479,16 +484,17 @@ header .intro-text .skills {
 /* portfolio modal animation*/
 
 .fade{
-    transform:scale(.5);
-    transition: all .5s;
-    -webkit-transform:scale(.5);
-    -webkit-transition: all .5s;
+    transform:scale(1)  translate(100%, 0%);
+    
+    -webkit-transform:scale(1) translate(100%, 0%);
+    transition: all ease-in-out .5s .5s;
+    -webkit-transition: all ease-in-out .5s .5s;
 }
 .fade.in{
-    transform:scale(1);
-    transition: all .5s;
-    -webkit-transform:scale(1);
-    -webkit-transition: all .5s;
+    transform:scale(1) translate(0%, 0%);
+    transition: all ease-in-out .5s;
+    -webkit-transform:scale(1) translate(0%, 0%);
+    -webkit-transition: all ease-in-out .5s;
 }
 .fade .modal-content .container .row div .modal-body h2{
     opacity: 0;
@@ -506,9 +512,9 @@ header .intro-text .skills {
 .fade .modal-content .close-modal{ 
     opacity: 0;
     transform:translate(-20px,0px);
-    transition: all .5s;   
+    transition: all .5s 1.3s;   
     -webkit-transform:translate(-20px,0px);
-    -webkit-transition: all .5s;   
+    -webkit-transition: all .5s 1.3s;   
 }
 .fade.in .modal-content .close-modal{ 
     opacity: 1;
@@ -519,9 +525,9 @@ header .intro-text .skills {
 .fade .modal-content .container .row div .modal-body hr.star-primary {
     opacity: 0;
     transform:translate(0px,-20px);
-    transition: all .5s .8s; 
+    transition: all .5s 2.1s; 
     -webkit-transform:translate(0px,-20px);
-    -webkit-transition: all .5s .8s; 
+    -webkit-transition: all .5s 2.1s;
 }
 .fade.in .modal-content .container .row div .modal-body hr.star-primary {
     opacity: 1;
@@ -532,9 +538,9 @@ header .intro-text .skills {
 .fade .modal-content .container .row div .modal-body hr.star-primary:after {
     opacity: 0;
     transform:translate(0px,-20px);
-    transition: all .5s 1s; 
+    transition: all .5s 2.4s; 
     -webkit-transform:translate(0px,-20px);
-    -webkit-transition: all .5s .8s; 
+    -webkit-transition: all .5s 2.4s; 
 }
 .fade.in .modal-content .container .row div .modal-body hr.star-primary:after {
   opacity: 1;
@@ -545,9 +551,9 @@ header .intro-text .skills {
 .fade .modal-content .container .row div .modal-body p,.fade .modal-content .container .row div .modal-body ul {
     opacity: 0;
     transform:translate(0px,-20px);
-    transition: all .5s 1.2s; 
+    transition: all .5s 2.6s; 
     -webkit-transform:translate(0px,-20px);
-    -webkit-transition: all .5s 1.2s; 
+    -webkit-transition: all .5s 2.6s; 
 }
 .fade.in .modal-content .container .row div .modal-body p,.fade.in .modal-content .container .row div .modal-body ul {
   opacity: 1;
@@ -558,9 +564,9 @@ header .intro-text .skills {
 .fade .modal-content .container .row div .modal-body img {
     opacity: 0;
     transform:translate(0px,-20px);
-    transition: all .5s 1.5s; 
+    transition: all .5s 2.6s; 
     -webkit-transform:translate(0px,-20px);
-    -webkit-transition: all .5s 1.5s; 
+    -webkit-transition: all .5s 2.6s; 
 }
 .fade.in .modal-content .container .row div .modal-body img {
   opacity: 1;
@@ -618,6 +624,7 @@ section h2 {
 section.success {
      color: #fff;   
      background: url("../img/bg3.jpg") no-repeat fixed 50% 0% rgba(0, 0, 0, 1);
+     background-size: cover;
      /*background: url("../img/bg3.jpg") no-repeat scroll top center rgba(0, 0, 0, 1)*/
      padding: 100px 0;
 }
@@ -861,6 +868,26 @@ footer .footer-below {
     -webkit-box-shadow: none;
     box-shadow: none;
 }
+.fade .modal-content::after {
+    background: none repeat scroll 0 0 rgba(150, 150, 150, 1);
+    content: " ";
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    transition:all .5s ease-in-out ;
+    -webkit-transition:all .5s ease-in-out ;
+    transform:translate(0%,0%);
+}
+.fade.in .modal-content::after {
+    -webkit-transition:all .5s ease-in-out 1s;
+    transition:all .5s ease-in-out 1s;
+    transform:translate(-100%,0%);
+    background: none repeat scroll 0 0 rgba(150, 150, 150, .5);
+}
+
 
 .portfolio-modal .modal-content h2 {
     margin: 0;
