@@ -456,7 +456,7 @@ header .intro-text .skills {
     transform:translate(0px,-20px) rotateY(90deg);
     transition: all .5s;
     transition-delay: 1s; 
-    -webkit-transform:translate(0px,-20px) rotateY(90deg);
+    -webkit-transform:translate(0px,-20px) rotateY(0deg);
     -webkit-transition: all .5s;
     -webkit-transition-delay: 1s; 
 }
