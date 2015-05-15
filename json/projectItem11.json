@@ -2,7 +2,7 @@
    "project":{
       "id":11,
       "name":"Proof of Concept: Cabin Temperature App",
-      "url":"http:\/\/www.behance.net\/gallery\/475570\/Toshiba-UAE-proposed-website",
+      "url":"",
       "fields":[
          "Art Direction",
          "Web Design",
@@ -13,7 +13,7 @@
       },
     
      
-      "description":"Toyota Choices",
+      "description":"Cabin Temperature app is a proof of concept application and part of the Emirates IT Initiative in developing 'Internet of Things' application. This app uses a BLT device to monitor the temperature from a cargo cabin and send its data to the app. ",
       "modules":[
          {
             "id":2636362,

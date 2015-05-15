@@ -1,8 +1,7 @@
 {
    "project":{
       "id":4,
-      "name":"Glass touch application",
-      "url":"http:\/\/www.behance.net\/gallery\/475570\/Toshiba-UAE-proposed-website",
+      "name":"Proof of concept: Glass touch application",
       "fields":[
          "Front end Development",
          "UI/UX Design",
@@ -13,7 +12,7 @@
       },
     
      
-      "description":"dnata Glass Touch Application",
+      "description":"dnata Glass Touch is an interactive application projected on a glass wall displaying the latest offers of dnata travel.",
       "modules":[
          {
             "id":2636362,

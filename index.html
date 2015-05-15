@@ -284,12 +284,16 @@
                                         <p>{{project.description}}</p>
                                         <ul class="list-inline item-details">
                                             <li>Role: 
-                                           
                                             <a href=""><strong>{{project.fields}}</strong></a> 
-                                            
                                             </li>
                                             
                                         </ul>
+                                        {{#if project.url}}
+                                         <a href="{{project.url}}" class="btn btn-lg green btn-outline">
+                                            <i class="fa fa-download"></i> Launch site
+                                        </a>
+                                        {{/if}}
+                                        
                                         {{#each project.modules }}
                                              
                                              {{#if this.sizes.max_1240}}

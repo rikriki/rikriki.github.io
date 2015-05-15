@@ -2,7 +2,7 @@
    "project":{
       "id":2,
       "name":"fisker Middle East",
-      "url":"http:\/\/www.behance.net\/gallery\/475570\/Toshiba-UAE-proposed-website",
+      "url":"http:\/\/www.fiskerme.com",
       "fields":[
          "Art Direction",
          "Web Design",
@@ -13,7 +13,8 @@
       },
     
      
-      "description":"Toyota Choices",
+      "description":"Fisker Karma HTML5 website is the digital face of Fisker automotive in the middle east. This microsite is usde as part of a marketing campaign in introducing fisker automotive and fisker karma in the middle east.",
+
       "modules":[
          {
             "id":2636362,

@@ -377,6 +377,7 @@ hr.star-primary:after {
 .img-centered {
     margin: 0 auto;
 }
+
 /*Animation riki updated 1*/
 
 body {
@@ -521,19 +522,23 @@ header .intro-text .skills {
     opacity: 1;
     transform:translate(0px,0px);
     -webkit-transform:translate(0px,0px);
+
 }
 
 .fade .modal-content .container .row div .modal-body hr.star-primary {
     opacity: 0;
     transform:translate(0px,-20px);
     transition: all .5s 2.1s; 
-    -webkit-transform:translate(0px,-20px);
+    -webkit-transform:translate(0px,0px);
     -webkit-transition: all .5s 2.1s;
+    max-width: 0px!important;
+    
 }
 .fade.in .modal-content .container .row div .modal-body hr.star-primary {
     opacity: 1;
     transform:translate(0px,0px);
     -webkit-transform:translate(0px,0px);
+    max-width: 250px!important;
 }
 
 .fade .modal-content .container .row div .modal-body hr.star-primary:after {
@@ -1147,6 +1152,12 @@ opacity: 0;
         }
         p {
             font-size: 16px;
+        }
+        .portfolio-modal .modal-content h2 {
+          font-size: 1.5em;
+        }
+        hr.star-light:after, hr.star-primary:after {
+          font-size: 1.5em;
         }
 
     }

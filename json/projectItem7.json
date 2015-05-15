@@ -2,7 +2,7 @@
    "project":{
       "id":7,
       "name":"Emirates Executive",
-      "url":"http:\/\/www.behance.net\/gallery\/475570\/Toshiba-UAE-proposed-website",
+      "url":"http:\/\/www.emirates-executive.com",
       "fields":[
          "Front end Development",
          "UI/UX Design",
@@ -13,7 +13,7 @@
       },
     
      
-      "description":"Emirates Airline website",
+      "description":"Emirates Executive is a private jet service from Emirates. This parallaxs microsite explains all the luxury interiors and tailored service that will make everyone flights the ultimate in exclusive travel",
       "modules":[
          {
             "id":2636362,

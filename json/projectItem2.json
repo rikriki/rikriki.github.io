@@ -2,18 +2,20 @@
    "project":{
       "id":2,
       "name":"Toyota Choices",
-      "url":"http:\/\/www.behance.net\/gallery\/475570\/Toshiba-UAE-proposed-website",
+      "url":"http:\/\/www.toyotachoices.ae",
       "fields":[
-         "Art Direction",
-         "Web Design",
-         "Web Development"
+         "Information Architecture",
+         "Visual design",
+         "Wireframes",
+         "Behavioral design"
       ],
       "covers":{
          "404":"https:\/\/mir-cdn.behance.net\/v1\/rendition\/projects\/404\/475570.543e165802049.jpg"
       },
     
      
-      "description":"Toyota Choices",
+      "description":"Toyota Choices is the Personalised Contract Plan(PCP) of Toyota, the easiest way to drive a car you really want
+With attractive monthly payments. This Responsive website explain how the plan works in a unique digital experience that caters for desktop and mobile users. .",
       "modules":[
          {
             "id":2636362,

@@ -2,18 +2,17 @@
    "project":{
       "id":3,
       "name":"Emirates Airline | Inspire Me",
-      "url":"http:\/\/www.behance.net\/gallery\/475570\/Toshiba-UAE-proposed-website",
+      "url":"http:\/\/www.emirates.com\/ae\/english\/plan_book\/inspire-me\/inspire-me.aspx",
       "fields":[
-         "Front end Development",
-         "UI/UX Design",
-         "Web Development"
+         "UI updates",
+         "Visual design"
       ],
       "covers":{
          "404":"https:\/\/mir-cdn.behance.net\/v1\/rendition\/projects\/404\/475570.543e165802049.jpg"
       },
     
      
-      "description":"Emirates Airline website",
+      "description":"Inspire Me is our interactive map, designed to help you decide where to take your next trip and compare fares. ",
       "modules":[
          {
             "id":2636362,

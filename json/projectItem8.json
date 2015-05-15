@@ -2,7 +2,7 @@
    "project":{
       "id":2,
       "name":"Marhaba Services",
-      "url":"http:\/\/www.behance.net\/gallery\/475570\/Toshiba-UAE-proposed-website",
+      "url":"http:\/\/marhaba-app.herokuapp.com",
       "fields":[
          "Art Direction",
          "Web Design",
@@ -13,8 +13,10 @@
       },
     
      
-      "description":"Toyota Choices",
-      "modules":[
+      "description":"Marhaba service HTML5 app showcase the exclusive meet and greet service in the airport of Dubai. From fast-track clearance through arrivals 
+       or departures to helping with transfers, baggage and family travel, we ensure a swift, smooth and safe passage through the airport. ",
+
+     "modules":[
          {
             "id":2636362,
             "type":"image",

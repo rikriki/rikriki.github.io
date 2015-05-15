@@ -2,18 +2,19 @@
    "project":{
       "id":1,
       "name":"Emirates Airline website",
-      "url":"http:\/\/www.behance.net\/gallery\/475570\/Toshiba-UAE-proposed-website",
+      
+      "url":"http:\/\/www.emirates.com",
       "fields":[
-         "Front end Development",
-         "UI/UX Design",
-         "Web Development"
+         "Wireframes",
+         "UI Design",
+         "User journey"
       ],
       "covers":{
          "404":"https:\/\/mir-cdn.behance.net\/v1\/rendition\/projects\/404\/475570.543e165802049.jpg"
       },
     
      
-      "description":"Emirates Airline website",
+      "description":"Emirates airline website is the main E-commerce site of Emirates group for B2B and B2C. Some of the mainfunctionality of the website are booking, reserving and updating airline tickets, hotels and chaffuer services.",
       "modules":[
          {
             "id":2636362,
