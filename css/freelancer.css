@@ -200,8 +200,8 @@
     top: 25px;
     -webkit-transition: all 0.5s;
     transition:all 0.5s;
-    -webkit-transform: scale(0.05, 0.1) translate(1000%, -500%);
-    transform: scale(0.05, 0.1) translate(1000%, -500%);
+    -webkit-transform: scale(1, 1) translate(98%,  -92.8%);
+    transform: scale(1, 1) translate(98%,  -92.8%);
     opacity: 0;
     visibility: hidden;
 }
@@ -211,12 +211,19 @@
     visibility: visible;
     -webkit-transition:  all 0.5s;
     transition: all 0.5s;
-    -webkit-transform: translate(0%,0%) scale(1,1);
-    transform: translate(0%,0%) scale(1,1);
+    -webkit-transform: scale(1, 1) translate(0%,  0%);
+    transform: scale(1, 1) translate(0%,  0%);
     top: 0;
     right: 0;
 }
-
+.overlay-hugeinc.shrink{
+    -webkit-transform: scale(1, 1) translate(84%, -92.8%);
+    transform:scale(1, 1) translate(84%, -92.8%);
+}
+.overlay-hugeinc.shrink.open{
+    -webkit-transform: scale(1, 1) translate(0%, 0%);
+    transform:scale(1, 1) translate(0%, 0%);
+}
 
 .overlay-hugeinc nav {
     -webkit-perspective: 1200px;
@@ -554,19 +561,22 @@ header .intro-text .skills {
     -webkit-transform:translate(0px,0px);
 }
 
-.fade .modal-content .container .row div .modal-body p,.fade .modal-content .container .row div .modal-body ul {
+.fade .modal-content .container .row div .modal-body p,.fade .modal-content .container .row div .modal-body ul,.fade .modal-content .container .row div .modal-body a {
     opacity: 0;
     transform:translate(0px,-20px);
     transition: all .5s 2.6s; 
     -webkit-transform:translate(0px,-20px);
     -webkit-transition: all .5s 2.6s; 
 }
-.fade.in .modal-content .container .row div .modal-body p,.fade.in .modal-content .container .row div .modal-body ul {
+.fade.in .modal-content .container .row div .modal-body p,.fade.in .modal-content .container .row div .modal-body ul,.fade.in .modal-content .container .row div .modal-body a {
   opacity: 1;
     transform:translate(0px,0px);
     -webkit-transform:translate(0px,0px);
 }
-
+.fade .modal-content .container .row div .modal-body a{
+    margin-bottom: 40px;
+    margin-top: 10px;
+}
 .fade .modal-content .container .row div .modal-body img {
     opacity: 0;
     transform:translate(0px,-20px);

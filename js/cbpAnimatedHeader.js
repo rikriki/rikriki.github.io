@@ -13,6 +13,7 @@ var cbpAnimatedHeader = function() {
 	var docElem = document.documentElement,
 		header = document.querySelector( '.nav-toggle' ),
 		didScroll = false,
+		overlay = document.querySelector('.overlay-hugeinc');
 		changeHeaderOn = 400;
 		
 
@@ -29,10 +30,13 @@ var cbpAnimatedHeader = function() {
 		var sy = scrollY();
 		if ( sy >= changeHeaderOn ) {
 			classie.add( header, 'shrink' );
+			classie.add( overlay, 'shrink' );
+			
 			
 		}
 		else {
 			classie.remove( header, 'shrink' );
+			classie.remove( overlay, 'shrink' );
 		}
 		didScroll = false;
 	}
