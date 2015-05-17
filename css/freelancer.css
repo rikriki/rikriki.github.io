@@ -1076,8 +1076,14 @@ opacity: 0;
 }
 
 
-
-
+/* MODAL CSS*/
+.leftBtn{
+    position: absolute;
+  left: 0px;
+  top: 40%;
+  z-index: 4000;
+}
+/* MODAL CSS*/
 /* Media CSS*/
     @media screen and (max-height: 30.5em) {
         .overlay1 nav {
