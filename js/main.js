@@ -278,7 +278,7 @@ function loadAll() {
       template    = Handlebars.compile(getTemplate),
       result      = template(userData);
       $('div.modal-content').eq(0).html(result);  
-    },100);
+    },1000);
     
   }
 }
