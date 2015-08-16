@@ -97,6 +97,11 @@ button#showMenu.contact::before {
     -webkit-transform: translateZ(0) translateX(0) rotateY(0deg); /* reset transforms (Chrome bug) */
     transform: translateZ(0) translateX(0) rotateY(0deg);
 }
+.perspective-container{
+  -webkit-transform:scale(1) rotateX(0deg);
+  overflow: auto;
+}
+
 .perspective-container.hidden{
     
 }

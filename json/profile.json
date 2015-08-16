@@ -1,9 +1,9 @@
 {
    "user":{
       "id":162107,
-      "first_name":"riki",
+      "first_name":"frederick",
       "last_name":"rosales",
-      "username":"rikirosales",
+      "username":"frederick rosales",
       "city":"Dubai",
       "state":"",
       "country":"United Arab Emirates",
@@ -17,7 +17,7 @@
          "115":"https:\/\/mir-cdn.behance.net\/v1\/rendition\/user\/115\/162107.53abfc0da47d0.jpg",
          "138":"https://mir-cdn.behance.net/v1/rendition/user/138/162107.53abfc0da47d0.jpg"
       },
-      "display_name":"riki rosales",
+      "display_name":"Frederick Rosales",
       "fields":[
          "Web Design",
          "UI\/UX",
@@ -29,8 +29,9 @@
 
       ],
       "sections":{
-         "Hi":"I am a Full stack developer and interactive designer from Dubai UAE with more than 8+ years experience in interactive development and digital marketing.\n",
-         "About":"I'm Riki currently working as Senior Software Engineer for Interactive development at Emirates Airlines. Prior in working at Emirates,  I've also  worked for a multinational Agency which caters  several international brands like Toyota, Lexus, Toys 'R' Us, Ikea, Marks & Spencer and Honda."
+         "Hi":"Tel:289 990 6568 | Address: 6 Westlake lane St. Catharines ontario canada. | frederick.rosales@gmail.com\n",
+         "About":""
+
       },
       "recommendations":{
          "items":[

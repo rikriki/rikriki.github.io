@@ -880,6 +880,8 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap requires jQuery'
     //Timeout should be based on the css3 delay
     setTimeout(function(){
       $('.perspective-container').removeClass('portfolio-hide')
+      $('#trigger-overlay').removeClass('hide')
+      
     },1000)
     if (e) e.preventDefault()
 
@@ -1026,20 +1028,16 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap requires jQuery'
     var $this   = $(this)
     var href    = $this.attr('href')
     pID   = $this.attr('alt')
-    console.log(pID)
-    projectIDInit(pID);
-     $('div.modal-content').html("");
     var $target = $($this.attr('data-target') || (href && href.replace(/.*(?=#[^\s]+$)/, ''))) //strip for ie7
-    console.log($target)
     var option  = $target.data('bs.modal') ? 'toggle' : $.extend({ remote: !/#/.test(href) && href }, $target.data(), $this.data())
     
-    if ($this.is('a')) e.preventDefault()
+     $('div.modal-content').html("");
+     if ($this.is('a')) e.preventDefault() 
+     projectIDInit2(pID,$target,option,$this); 
+    
+   
 
-    $target
-      .modal(option, this)
-      .one('hide', function () {
-        $this.is(':visible') && $this.focus()
-      })
+    
       
   })
 

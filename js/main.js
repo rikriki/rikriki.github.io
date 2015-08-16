@@ -4,6 +4,8 @@ if(isiPad){$("section.success").css("background-attachment","scroll");}
 var apiKey  = 'NGCVFuJ8w4IWMyLeaGGyg2X01orRKdq1';
 var userID  = 'frederickrosales';
 var docElem = window.document.documentElement,
+perspective = document.querySelector('.perspective-container'), 
+loading = document.querySelector('.loading_wrapper');
         //nav buttons
         nav = Array.prototype.slice.call(document.querySelectorAll('nav >ul>li> a') ),
         // support transitions
@@ -164,7 +166,26 @@ function init() {
                navigation : true
             });
         }
+        //Loading canvas
+        var c6=document.getElementById("layer6");
+        var ctx6=c6.getContext("2d");  
+        ctx6.fillStyle="#FFF";
+        ctx6.beginPath();
+        ctx6.arc(25,25,24,0,Math.PI*2,true);
+        ctx6.closePath();ctx6.fill();
+        var c8=document.getElementById("layer8");
+        var ctx8=c8.getContext("2d");
+        ctx8.fillStyle = "#000"; ctx8.fillStyle="#5a0205";
+        ctx8.fillRect(15,0,20,20);    
+        var c7=document.getElementById("layer7");
+        var ctx7=c7.getContext("2d");     ctx7.fillStyle="#5a0205";
+        ctx7.beginPath();
+        ctx7.arc(25,25,21,0,Math.PI*2,true);
+        ctx7.closePath();
+        ctx7.fill();
+        ctx7.fillStyle = "#000";
     }
+
 function projectIDInit(projectID){
     //var behanceProjectIDAPI = 'http://www.behance.net/v2/projects/'+ projectID +'?callback=?&api_key='+ apiKey;   
    
@@ -173,18 +194,104 @@ function projectIDInit(projectID){
             
             var data = JSON.stringify(user);
            sessionStorage.setItem('behanceProjectID', data);
+
             setProjectIDTemplate();
         }).error(function(jqXhr, textStatus, error) {
                 alert("ERROR in projectItem: " + textStatus + ", " + error);
         });
         function setProjectIDTemplate() {
-            var userData    = JSON.parse(sessionStorage.getItem('behanceProjectID')),
-            getTemplate = $('#projectID-template').html(),
-            template    = Handlebars.compile(getTemplate),
-            result      = template(userData);
-            $('div.modal-content').eq(0).html(result);
+            userData    = JSON.parse(sessionStorage.getItem('behanceProjectID'));
+            loadImages(userData.project.modules);
             //alert(userData)
         }
+}
+
+function projectIDInit2(projectID,targetOBJ,optionOBJ,modalOBJ){
+    //var behanceProjectIDAPI = 'http://www.behance.net/v2/projects/'+ projectID +'?callback=?&api_key='+ apiKey;   
+    target = targetOBJ;
+    option = optionOBJ;
+    modal = modalOBJ;
+    classie.add( perspective, 'loading' );
+    classie.add(triggerBttn,"hide");
+    classie.add(loading,"activated");
+    $.getJSON("json/projectItem"+projectID+".json", function(user) {
+   // $.getJSON(behanceProjectIDAPI, function(user) {
+            
+            var data = JSON.stringify(user);
+           sessionStorage.setItem('behanceProjectID', data);
+
+            setProjectIDTemplate();
+        }).error(function(jqXhr, textStatus, error) {
+                alert("ERROR in projectItem: " + textStatus + ", " + error);
+        });
+        function setProjectIDTemplate() {
+            userData    = JSON.parse(sessionStorage.getItem('behanceProjectID'));
+            loadImages(userData.project.modules);
+            //alert(userData)
+        }
+}
+function getDomain(){
+  return "http://"+document.domain+":1337/"
+}
+var preload,perc,userData, imagesToLoad,target,option,modal;
+
+function loadImages(obj){
+  imagesToLoad=[];
+  perc = 0;
+  obj.forEach(function(el,i){
+    imagesToLoad.push(el.src);
+  });
+  
+  if (preload != null) { 
+    preload.close(); 
+  }
+
+  // Push each item into our manifest
+  manifest = imagesToLoad;
+  // Create a preloader. There is no manfest added to it up-front, we will add items on-demand.
+  preload = new createjs.PreloadJS();
+  //preload.onFileLoad = handleFileLoad;
+  preload.onProgress = handleOverallProgress;
+  //preload.onError = handleFileError;
+  preload.setMaxConnections(5);
+  /*preload = new createjs.LoadQueue();
+  preload.addEventListener("fileload", handleFileComplete);*/
+  loadAll();
+}
+function loadAll() {
+  while (manifest.length > 0) {
+    loadAnother();
+    console.log("another loading")
+  }
+  if(manifest.length==imagesToLoad.length)
+  {
+    setTimeout(function(){
+      classie.remove( perspective, 'loading' );
+      classie.remove(loading,"activated");
+      console.log("Complete!!");
+      target
+        .modal(option, this)
+        .one('hide', function () {
+          modal.is(':visible') && modal.focus()
+        })
+      getTemplate = $('#projectID-template').html(),
+      template    = Handlebars.compile(getTemplate),
+      result      = template(userData);
+      $('div.modal-content').eq(0).html(result);  
+    },100);
+    
+  }
+}
+
+function loadAnother() {
+  // Get the next manifest item, and load it
+  var item = manifest.shift();
+  preload.loadFile(item);
+}
+
+// Overall progress handler
+function handleOverallProgress(event) {
+  perc = preload.progress*100;
 }
 function loadMoreProject(event){
     var behanceProjectsAPI = 'http://www.behance.net/v2/users/'+ userID +'/projects?callback=?&api_key='+ apiKey;

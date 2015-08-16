@@ -1,23 +1,25 @@
 {
    "project":{
-      "id":4,
-      "name":"Proof of concept: Glass touch application",
+      "id":11,
+      "name":"Honda UAE website",
+      "url":"http://www.honda.ae",
       "fields":[
-         "Front end Development",
-         "UI/UX Design",
-         "Web Development"
+         "Art Direction",
+         "Information Architecture",
+         "User Experience",
+         "Front End Development"
       ],
       "covers":{
          "404":"https:\/\/mir-cdn.behance.net\/v1\/rendition\/projects\/404\/475570.543e165802049.jpg"
       },
     
      
-      "description":"dnata Glass Touch is an interactive application projected on a glass wall displaying the latest offers of dnata travel.",
+      "description":"Honda website in the UAE",
       "modules":[
          {
             "id":2636362,
             "type":"image",
-            "src":"img/dn1.jpg",
+            "src":"img/honda.jpg",
             "width":960,
             "height":700,
             "sizes":[
@@ -27,7 +29,7 @@
          {
             "id":2636362,
             "type":"image",
-            "src":"img/dn1a.jpg",
+            "src":"img/hondaA.jpg",
             "width":960,
             "height":700,
             "sizes":[
@@ -37,7 +39,7 @@
          {
             "id":2636362,
             "type":"image",
-            "src":"img/dn1b.jpg",
+            "src":"img/hondaB.jpg",
             "width":960,
             "height":700,
             "sizes":[
@@ -47,7 +49,7 @@
          {
             "id":2636362,
             "type":"image",
-            "src":"img/dn1c.jpg",
+            "src":"img/hondaC.jpg",
             "width":960,
             "height":700,
             "sizes":[
@@ -57,7 +59,7 @@
          {
             "id":2636362,
             "type":"image",
-            "src":"img/dn2a.jpg",
+            "src":"img/hondaD.jpg",
             "width":960,
             "height":700,
             "sizes":[
@@ -67,29 +69,9 @@
          {
             "id":2636362,
             "type":"image",
-            "src":"img/dn2b.jpg",
-            "width":960,
-            "height":700,
-            "sizes":[
-
-            ]
-         },
-         {
-            "id":2636362,
-            "type":"image",
-            "src":"img/dn2c.jpg",
-            "width":960,
-            "height":700,
-            "sizes":[
-
-            ]
-         },
-         {
-            "id":2636362,
-            "type":"image",
-            "src":"img/dn2d.jpg",
-            "width":960,
-            "height":700,
+            "src":"img/hondaE.jpg",
+            "width":500,
+            "height":750,
             "sizes":[
 
             ]
