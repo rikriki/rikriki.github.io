@@ -261,14 +261,12 @@ function loadImages(obj){
 function loadAll() {
   while (manifest.length > 0) {
     loadAnother();
-    console.log("another loading")
   }
   if(manifest.length==imagesToLoad.length)
   {
     setTimeout(function(){
       classie.remove( perspective, 'loading' );
       classie.remove(loading,"activated");
-      console.log("Complete!!");
       target
         .modal(option, this)
         .one('hide', function () {
@@ -278,7 +276,7 @@ function loadAll() {
       template    = Handlebars.compile(getTemplate),
       result      = template(userData);
       $('div.modal-content').eq(0).html(result);  
-    },1000);
+    },2000);
     
   }
 }

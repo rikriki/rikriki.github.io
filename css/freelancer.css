@@ -1262,6 +1262,10 @@ opacity: 0;
          background: url("../img/bg3.jpg") no-repeat scroll top center rgba(0, 0, 0, 1)!important;
          padding: 50px 0;
         }
+        .perspective-container.loading{
+            -webkit-transform:scale(.95) rotateX(-10deg) translate(-50px, 0%);
+            
+        }
 
     }
     @media(min-width:767px) {

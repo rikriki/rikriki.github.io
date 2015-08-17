@@ -797,7 +797,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap requires jQuery'
     this.$element  = $(element)
     this.$backdrop =
     this.isShown   = null
-    console.log(this.$element)
+    //console.log(this.$element)
     if (this.options.remote) {
       this.$element
         .find('.modal-content')
