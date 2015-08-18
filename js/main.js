@@ -6,6 +6,10 @@ var userID  = 'frederickrosales';
 var docElem = window.document.documentElement,
 perspective = document.querySelector('.perspective-container'), 
 loading = document.querySelector('.loading_wrapper');
+var imgCache = new Array();
+var preload,perc,userData,target,option,modal;
+var imagesToLoad=new Array();
+
         //nav buttons
         nav = Array.prototype.slice.call(document.querySelectorAll('nav >ul>li> a') ),
         // support transitions
@@ -238,15 +242,15 @@ function projectIDInit2(projectID,targetOBJ,optionOBJ,modalOBJ){
 function getDomain(){
   return "http://"+document.domain+":1337/"
 }
-var preload,perc,userData, imagesToLoad,target,option,modal;
-
+var imglength;
 function loadImages(obj){
-  imagesToLoad=[];
+  
   perc = 0;
   obj.forEach(function(el,i){
     imagesToLoad.push(el.src);
   });
-  
+  console.log("IMages to load ===== " + imagesToLoad.length)
+  imglength =imagesToLoad.length;
   if (preload != null) { 
     preload.close(); 
   }
@@ -255,12 +259,14 @@ function loadImages(obj){
   manifest = imagesToLoad;
   // Create a preloader. There is no manfest added to it up-front, we will add items on-demand.
   preload = new createjs.PreloadJS();
-  //preload.onFileLoad = handleFileLoad;
+  preload.onFileLoad = handleFileLoad;
   preload.onProgress = handleOverallProgress;
   //preload.onError = handleFileError;
   preload.setMaxConnections(5);
   /*preload = new createjs.LoadQueue();
   preload.addEventListener("fileload", handleFileComplete);*/
+  map =[];
+  imgCache=[];
   loadAll();
 }
 function loadAll() {
@@ -269,6 +275,7 @@ function loadAll() {
   }
   if(manifest.length==imagesToLoad.length)
   {
+   
     setTimeout(function(){
       classie.remove( perspective, 'loading' );
       classie.remove(loading,"activated");
@@ -281,13 +288,77 @@ function loadAll() {
     
   }
 }
-
+var map = new Array();
 function loadAnother() {
   // Get the next manifest item, and load it
   var item = manifest.shift();
   preload.loadFile(item);
 }
+// File complete handler
+    function handleFileLoad(event) {
+      
+      // Get a reference to the loaded image (<img/>)
+      
+      var img = event.result;
+      imgCache.push(img)
+      console.log(map)
+      console.log(String(String(event.src).toLowerCase()) + " Images that are loaded")
+      // getting the images and their index for later sorting
+      map[map.length] = {'src':String(String(event.src).toLowerCase()).replace('img/','').replace('.jpg','').replace('.png',''),'data':img};
+      // checking to see if all images have been loaded. 
+      // sometimes when images are cached preloadJS fires 100% but there are still some images missing
+      console.log(map.length+ " " + imglength);
+      console.log(imglength);
+      console.log("-----------map length compare to imagesToLoad");
+      if(map.length<imglength){
+        
+      }
+      else{
+        imgCache.forEach(function(el,i){
+          
+          $(".modal-images").append(el);
+        });
+        $(".modal-images").children().addClass("img-responsive img-centered")
 
+        
+        /*if(preload.progress==1){
+          stop();
+          TweenMax.delayedCall(0.5,function(){
+            map.sort(sortImages);
+            
+            var parent = $("#innerContainer");
+            // setting images to DOM
+            for(var i= 0;i<map.length;i++){
+              var item = $(map[i].data);
+              item.addClass('slideImages');
+              item.attr('id','img'+i);
+              
+              if(i==0){
+                item.addClass('selected');
+              }
+              else{
+                item.addClass('hidden');
+              }
+              
+              parent.append('<div id="slideImg'+i+'" class="slideImagesContainer"></div>');
+              $("#slideImg"+i).append(item);
+            }
+            
+            TweenMax.to($(".loadingBar"),0.1,{css:{autoAlpha:0},onComplete:function(){
+              $(".loadingBar").remove();
+            }});
+            
+            TweenMax.to($(".slideImagesContainer"),0.4,{css:{autoAlpha:1},onComplete:function(){
+              
+              TweenMax.to($("#leftArrow"),0.2,{css:{autoAlpha:1}});
+              
+            }});
+            
+            
+          });
+        }*/
+      }
+    }
 // Overall progress handler
 function handleOverallProgress(event) {
   perc = preload.progress*100;

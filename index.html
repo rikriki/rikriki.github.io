@@ -295,15 +295,10 @@
                                             <i class="fa fa-external-link"></i> Launch site
                                         </a>
                                         {{/if}}
-                                        
-                                        {{#each project.modules }}
-                                             
-                                             {{#if this.sizes.max_1240}}
-                                                 <img src="{{this.sizes.max_1240}}" class="img-responsive img-centered" alt=""><br/>
-                                              {{else}}
-                                                  <img src="{{this.src}}" class="img-responsive img-centered" alt=""><br/>
-                                              {{/if}}
-                                        {{/each}}
+                                        <div class="modal-images">
+
+                                        </div>
+                                       
                                         
                                         
                                         <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
