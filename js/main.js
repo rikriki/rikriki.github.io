@@ -167,6 +167,10 @@ function init() {
             });
         }
         //Loading canvas
+        createPreloader();
+    }
+
+function createPreloader(){
         var c6=document.getElementById("layer6");
         var ctx6=c6.getContext("2d");  
         ctx6.fillStyle="#FFF";
@@ -184,8 +188,7 @@ function init() {
         ctx7.closePath();
         ctx7.fill();
         ctx7.fillStyle = "#000";
-    }
-
+}
 function projectIDInit(projectID){
     //var behanceProjectIDAPI = 'http://www.behance.net/v2/projects/'+ projectID +'?callback=?&api_key='+ apiKey;   
    
@@ -217,18 +220,20 @@ function projectIDInit2(projectID,targetOBJ,optionOBJ,modalOBJ){
     $.getJSON("json/projectItem"+projectID+".json", function(user) {
    // $.getJSON(behanceProjectIDAPI, function(user) {
             
-            var data = JSON.stringify(user);
+           var data = JSON.stringify(user);
            sessionStorage.setItem('behanceProjectID', data);
+           userData    = JSON.parse(sessionStorage.getItem('behanceProjectID'));
+           loadImages(userData.project.modules);
 
-            setProjectIDTemplate();
+           getTemplate = $('#projectID-template').html(),
+           template    = Handlebars.compile(getTemplate),
+           result      = template(userData);
+           $('div.modal-content').eq(0).html(result);  
+        
         }).error(function(jqXhr, textStatus, error) {
-                alert("ERROR in projectItem: " + textStatus + ", " + error);
+            alert("ERROR in projectItem: " + textStatus + ", " + error);
         });
-        function setProjectIDTemplate() {
-            userData    = JSON.parse(sessionStorage.getItem('behanceProjectID'));
-            loadImages(userData.project.modules);
-            //alert(userData)
-        }
+        
 }
 function getDomain(){
   return "http://"+document.domain+":1337/"
@@ -272,10 +277,6 @@ function loadAll() {
         .one('hide', function () {
           modal.is(':visible') && modal.focus()
         })
-      getTemplate = $('#projectID-template').html(),
-      template    = Handlebars.compile(getTemplate),
-      result      = template(userData);
-      $('div.modal-content').eq(0).html(result);  
     },2000);
     
   }
