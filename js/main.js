@@ -273,20 +273,7 @@ function loadAll() {
   while (manifest.length > 0) {
     loadAnother();
   }
-  if(manifest.length==imagesToLoad.length)
-  {
-   
-    setTimeout(function(){
-      classie.remove( perspective, 'loading' );
-      classie.remove(loading,"activated");
-      target
-        .modal(option, this)
-        .one('hide', function () {
-          modal.is(':visible') && modal.focus()
-        })
-    },2000);
-    
-  }
+ 
 }
 var map = new Array();
 function loadAnother() {
@@ -318,7 +305,16 @@ function loadAnother() {
           
           $(".modal-images").append(el);
         });
-        $(".modal-images").children().addClass("img-responsive img-centered")
+        $(".modal-images").children().addClass("img-responsive img-centered");
+        setTimeout(function(){
+          classie.remove( perspective, 'loading' );
+          classie.remove(loading,"activated");
+          target
+            .modal(option, this)
+            .one('hide', function () {
+              modal.is(':visible') && modal.focus()
+            })
+        },2000);
 
         
         /*if(preload.progress==1){
