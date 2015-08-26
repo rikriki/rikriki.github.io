@@ -39,8 +39,7 @@ var imagesToLoad=new Array();
 //http://www.behance.net/v2/users/rikirosales?callback=?&api_key=NGCVFuJ8w4IWMyLeaGGyg2X01orRKdq1
 //http://www.behance.net/v2/projects/475570?callback=?&api_key=NGCVFuJ8w4IWMyLeaGGyg2X01orRKdq1
 //http://www.behance.net/v2/users/rikirosales/projects?callback=?&api_key=NGCVFuJ8w4IWMyLeaGGyg2X01orRKdq1
-     window.scrollTo(0, 0);
-        
+     
      init();
      loadMoreProject();
      startNAv();
@@ -118,6 +117,9 @@ function init() {
     //    userID = document.querySelector('#username').value
     //}
     //submitBtn.addEventListener("click",submitBtnClick);
+
+    classie.add(loading,'activated')   
+    classie.add(loading,'center')   
     var behanceUserAPI = 'http://www.behance.net/v2/users/'+ userID +'?callback=?&api_key='+ apiKey;
     container= document.querySelector('.container')
     projectIDInit(1);
@@ -126,9 +128,15 @@ function init() {
             var data = JSON.stringify(user);
 
             sessionStorage.setItem('behanceUser', data);
-            setUserTemplate();
-            setAboutTemplate();
-            setLinkedinTemplate();
+            
+            setTimeout(function(){
+              window.scrollTo(0, 0);
+                setUserTemplate();
+                setAboutTemplate();
+                setLinkedinTemplate();
+                classie.remove(loading,"activated")
+                classie.remove(loading,'center')
+            },2000)
 
         }).error(function(jqXhr, textStatus, error) {
                 alert("ERROR on profile:  " + textStatus + ", " + error);
