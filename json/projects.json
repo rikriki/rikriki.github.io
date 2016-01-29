@@ -56,20 +56,7 @@
             "404":"img/fisker_tn.jpg"
          }
       },
-      {
-         "id":13,
-         "name":"Journey Manager 4.0",
-         "covers":{
-            "404":"img/jm_tn.jpg"
-         }
-      },
-      {
-         "id":14,
-         "name":"Training Roster 1.0",
-         "covers":{
-            "404":"img/ekas_tn.jpg"
-         }
-      },
+      
       {
          "id":15,
          "name":"EKAS App 1.0",
