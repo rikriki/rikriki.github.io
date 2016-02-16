@@ -10,8 +10,9 @@ $(function() {
 });
 
 // Floating label headings for the contact form
-$(function() {
-    $("body").on("input propertychange", ".floating-label-form-group", function(e) {
+$(function() {	
+    console.log("This is inside freelance .js")
+    $("body").on("input propertychange", ".floating-label-form-group a", function(e) {
         $(this).toggleClass("floating-label-form-group-with-value", !! $(e.target).val());
     }).on("focus", ".floating-label-form-group", function() {
         $(this).addClass("floating-label-form-group-with-focus");
@@ -22,5 +23,5 @@ $(function() {
 
 // Highlight the top nav as scrolling occurs
 $('body').scrollspy({
-    target: '.navbar-fixed-top'
+    target: '.navbar-fixed-top a'
 })
